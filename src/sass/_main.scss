@@ -9,6 +9,11 @@ $heading-font: 'Libre Caslon Display', serif;
 @import url('https://fonts.googleapis.com/css?family=Libre+Caslon+Display|Poppins&display=swap');
 
 h1{
-    font-size: 10rem;
+    font-size: 5rem;
+    text-align: center;
     color: $dark-color;
+}
+
+body{
+    background-color: $light-color;
 }

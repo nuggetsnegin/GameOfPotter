@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Libre+Caslon+Text&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Libre+Caslon+Display|Poppins&display=swap");
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {
   display: block;
 }
@@ -184,6 +183,11 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 /*VARIABLES*/
 /*FONT*/
 h1 {
-  font-size: 10rem;
+  font-size: 5rem;
+  text-align: center;
   color: #171c20;
+}
+
+body {
+  background-color: #e4e4df;
 }
