@@ -45,6 +45,7 @@ class App extends Component {
       <div className='wrapper'>
         <h1>Game of Potter</h1>
         <p>Test test test</p>
+        <p>Text Nuno M</p>
       </div>
     );
   }
