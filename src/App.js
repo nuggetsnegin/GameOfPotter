@@ -14,6 +14,18 @@ class App extends Component {
   componentDidMount() {
     axios({
       method: 'get',
+      url: 'https://anapioficeandfire.com/api/characters?pageSize=50',
+      dataResponse: 'json',
+    }).then(response => {
+      console.log(response.data);
+
+      this.setState({
+        GoTCharacters: response.data,
+      });
+
+    })
+    axios({
+      method: 'get',
       url: 'https://www.potterapi.com/v1/characters',
       dataResponse: 'json',
       params: {
@@ -28,12 +40,11 @@ class App extends Component {
     });
   }
 
-  /*do got api https://anapioficeandfire.com/*/
-
   render() {
     return (
       <div className='wrapper'>
         <h1>Game of Potter</h1>
+        <p>Test test test</p>
       </div>
     );
   }
