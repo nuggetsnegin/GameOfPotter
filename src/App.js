@@ -20,7 +20,7 @@ class App extends Component {
       console.log(response.data);
 
       this.setState({
-        GOTChracers: response.data
+        GoTCharacters: response.data,
       });
 
     })
@@ -40,12 +40,11 @@ class App extends Component {
     });
   }
 
-  /*do got api https://anapioficeandfire.com/*/
-
   render() {
     return (
       <div className='wrapper'>
         <h1>Game of Potter</h1>
+        <p>Test test test</p>
       </div>
     );
   }
