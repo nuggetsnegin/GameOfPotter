@@ -13,11 +13,11 @@ class App extends Component {
 
   componentDidMount() {
     axios({
-      method: "get",
-      url: "https://www.potterapi.com/v1/characters",
-      dataResponse: "json",
+      method: 'get',
+      url: 'https://www.potterapi.com/v1/characters',
+      dataResponse: 'json',
       params: {
-        key: "$2a$10$QTTp9tiCR8CNBsj3iA5IR.jJhfdT2FKcAnZsP2gYYGaI27KsGEVwy",
+        key: '$2a$10$F5zeX2iHFskAgcz4ovhm4.BUaurcM.C9u5ncrkPda4RSBOgdTO8JK',
       },
     }).then(response => {
       console.log(response.data);
