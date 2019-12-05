@@ -9,7 +9,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      hpCharacters: [],
+      HPCharacters: [],
       gotCharacters: [],
       gotHouses: [
         "House Stark",
