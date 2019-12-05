@@ -9,7 +9,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      hpCharacters: [],
+      HPCharacters: [],
       gotCharacters: [],
       hpHouses: [],
       gotHouses: ['House Stark', 'House Lannister', 'House Tyrell', 'House Greyjoy'],
@@ -29,14 +29,14 @@ class App extends Component {
         data.forEach(house=>{
           house.data.forEach(character=>{
             const characterObject = {name: character.name,
-            house: character.house};
+            house: character.house, alive: character.alive};
 
             this.setState({
               gotCharacters: [...this.state.gotCharacters, characterObject]
             })
           })
         });
-        // console.log(this.state.gotCharacters);
+        console.log(this.state.gotCharacters);
       });
 
       axios({
@@ -63,7 +63,7 @@ class App extends Component {
     return (
       <div className='wrapper'>
         <h1>Game of Potter</h1>
-        <p></p>
+        <RandomizeCharacters IndividualGotProp ={this.state.gotCharacters}/>
       </div>
     );
   }
