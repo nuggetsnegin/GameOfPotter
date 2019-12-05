@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import "./styles/App.css";
 import axios from "axios";
+import RandomizeCharacters from './RandomizeCharacters';
+import GetCharacterImages from './RandomizeCharacters'
 
+let arrayOfHouses = []
 class App extends Component {
   constructor() {
     super();
@@ -13,6 +16,7 @@ class App extends Component {
     };
   }
 
+  
   componentDidMount() {
 
       const gotMultipleAPI = Promise.all([
@@ -54,6 +58,8 @@ class App extends Component {
 
 
   render() {
+    // console.log(this.state.GoTCharacters[0]);
+    
     return (
       <div className='wrapper'>
         <h1>Game of Potter</h1>
