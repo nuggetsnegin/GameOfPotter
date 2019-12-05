@@ -16,8 +16,6 @@ class GotLogic extends Component {
         value = "75";
     } else if (house === "House Greyjoy") {
         value = "50";
-    } else if (house === "House Greyjoy") {
-        value = "50";
     } else {
         value = "25";
     }
