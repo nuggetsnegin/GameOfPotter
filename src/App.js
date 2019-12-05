@@ -3,6 +3,7 @@ import "./styles/App.css";
 import axios from "axios";
 import RandomizeCharacters from "./RandomizeCharacters";
 import GetCharacterImages from "./RandomizeCharacters";
+import placeholderImage from './assets/cameraPlaceholder.jpg';
 
 let arrayOfHouses = [];
 class App extends Component {
@@ -38,6 +39,9 @@ class App extends Component {
       data.forEach(house => {
         house.data.forEach(character => {
           if (character.house !== undefined && character.birth !== undefined) {
+            if(character.image === undefined){
+              character.image = placeholderImage;
+            }
             const characterObject = {
               name: character.name,
               house: character.house,
