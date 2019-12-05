@@ -8,7 +8,6 @@ class App extends Component {
     this.state = {
       hpCharacters: [],
       gotCharacters: [],
-      hpHouses: [],
       gotHouses: ['House Stark', 'House Lannister', 'House Tyrell', 'House Greyjoy'],
     };
   }
@@ -43,17 +42,19 @@ class App extends Component {
           key: '$2a$10$F5zeX2iHFskAgcz4ovhm4.BUaurcM.C9u5ncrkPda4RSBOgdTO8JK',
         },
       }).then(data => {
-        console.log(data.data);
-  
-        this.setState({
-          HPCharacters: data.data,
-        })
+        data.data.forEach(character=>{
+          const characterObject = {name: character.name, house: character.house}
 
+          this.setState({
+            hpCharacters: [...this.state.hpCharacters, characterObject]
+          })
+        })
     });
   }
 
 
   render() {
+    
     return (
       <div className='wrapper'>
         <h1>Game of Potter</h1>
