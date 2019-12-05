@@ -40,7 +40,11 @@ class App extends Component {
           const characterObject = {
             name: character.name,
             house: character.house,
+            alive: character.alive,
+            age: character.birth,
+            image: character.image,
           };
+          // console.log(characterObject);
 
           this.setState({
             gotCharacters: [...this.state.gotCharacters, characterObject],
@@ -49,34 +53,83 @@ class App extends Component {
       });
     });
 
+  //   axios({
+  //     method: "get",
+  //     url: "https://www.potterapi.com/v1/characters",
+  //     dataResponse: "json",
+  //     params: {
+  //       key: "$2a$10$F5zeX2iHFskAgcz4ovhm4.BUaurcM.C9u5ncrkPda4RSBOgdTO8JK",
+  //     },
+  //   }).then(data => {
+  //     data.data.forEach(character => {
+  //       const characterObject = {
+  //         name: character.name,
+  //         house: character.house,
+  //         species: character.species,
+  //         book: character.books,
+  //       };
+
+  //       this.setState({
+  //         hpCharacters: [...this.state.hpCharacters, characterObject],
+  //       });
+  //     });
+  //   });
+
     axios({
+      url: `http://hp-api.herokuapp.com/api/characters`,
       method: "get",
-      url: "https://www.potterapi.com/v1/characters",
-      dataResponse: "json",
-      params: {
-        key: "$2a$10$F5zeX2iHFskAgcz4ovhm4.BUaurcM.C9u5ncrkPda4RSBOgdTO8JK",
-      },
     }).then(data => {
       data.data.forEach(character => {
         const characterObject = {
           name: character.name,
           house: character.house,
-        };
-
+          image: character.image,
+          birth: character.yearOfBirth,
+        }
         this.setState({
           hpCharacters: [...this.state.hpCharacters, characterObject],
         });
-      });
+
+      })
+
     });
   }
-
   render() {
-    // console.log(this.state.GoTCharacters[0]);
-
     return (
       <div className='wrapper'>
         <h1>Game of Potter</h1>
-        <p><RandomizeCharacters /></p>
+        <div className='characters'>
+          <div className='gotCharacters'>
+            {this.state.gotCharacters.map(character => {
+              return (
+                <div className='test'>
+                  <h3>{character.name}</h3>
+                  <p>{character.house}, {character.age}</p>
+                  <img
+                    className='gotImages'
+                    src={character.image}
+                    alt=''
+                  />
+                </div>
+              );
+            })}
+          </div>
+
+          <div className='hpCharacters'>
+            {this.state.hpCharacters.map(character => {
+              return <div class="test2">
+                <h3>{character.name}</h3>
+                <p>{character.house}</p>
+                <p>{character.birth}</p>
+                <img
+                    className='hpImages'
+                    src={character.image}
+                    alt=''
+                  />
+              </div>
+            })}
+          </div>
+        </div>
       </div>
     );
   }
