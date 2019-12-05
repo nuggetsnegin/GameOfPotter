@@ -37,18 +37,23 @@ class App extends Component {
     ]).then(data => {
       data.forEach(house => {
         house.data.forEach(character => {
-          const characterObject = {
-            name: character.name,
-            house: character.house,
-            alive: character.alive,
-            age: character.birth,
-            image: character.image,
-          };
+          if(character.house !== "" && character.birth !== ""){
+            const characterObject = {
+              name: character.name,
+              house: character.house,
+              alive: character.alive,
+                age: character.birth,
+                image: character.image,
+              };
+
+              this.setState({
+                gotCharacters: [...this.state.gotCharacters, characterObject],
+              });
+              console.log(gotCharacters);
+          }
+
           // console.log(characterObject);
 
-          this.setState({
-            gotCharacters: [...this.state.gotCharacters, characterObject],
-          });
         });
       });
     });
@@ -80,15 +85,19 @@ class App extends Component {
       method: "get",
     }).then(data => {
       data.data.forEach(character => {
-        const characterObject = {
-          name: character.name,
-          house: character.house,
-          image: character.image,
-          birth: character.yearOfBirth,
-        }
+
+        if(character.house !== "" && character.yearOfBirth !== ""){
+          const characterObject = {
+            name: character.name,
+            house: character.house,
+            image: character.image,
+            birth: character.yearOfBirth,
+          }
+
         this.setState({
           hpCharacters: [...this.state.hpCharacters, characterObject],
         });
+        }
 
       })
 
