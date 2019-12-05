@@ -1,51 +1,63 @@
 import React, { Component } from "react";
-import './styles/App.css';
+import "./styles/App.css";
 import axios from "axios";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      HPCharacters: [],
-      GoTCharacters: [],
+      hpCharacters: [],
+      gotCharacters: [],
+      hpHouses: [],
+      gotHouses: ['House Stark', 'House Lannister', 'House Tyrell', 'House Greyjoy'],
     };
   }
 
   componentDidMount() {
-    axios({
-      method: 'get',
-      url: 'https://anapioficeandfire.com/api/characters?pageSize=50',
-      dataResponse: 'json',
-    }).then(response => {
-      console.log(response.data);
 
-      this.setState({
-        GoTCharacters: response.data,
+      const gotMultipleAPI = Promise.all([
+        axios.get(`https://api.got.show/api/book/characters/byHouse/${this.state.gotHouses[0]}`),
+        axios.get(`https://api.got.show/api/book/characters/byHouse/${this.state.gotHouses[1]}`),
+        axios.get(`https://api.got.show/api/book/characters/byHouse/${this.state.gotHouses[2]}`),
+        axios.get(`https://api.got.show/api/book/characters/byHouse/${this.state.gotHouses[3]}`),
+      ]).then((data)=>{
+
+        data.forEach(house=>{
+          house.data.forEach(character=>{
+            const characterObject = {name: character.name,
+            house: character.house};
+
+            this.setState({
+              gotCharacters: [...this.state.gotCharacters, characterObject]
+            })
+          })
+        });
+        // console.log(this.state.gotCharacters);
       });
 
-    })
-    axios({
-      method: 'get',
-      url: 'https://www.potterapi.com/v1/characters',
-      dataResponse: 'json',
-      params: {
-        key: '$2a$10$F5zeX2iHFskAgcz4ovhm4.BUaurcM.C9u5ncrkPda4RSBOgdTO8JK',
-      },
-    }).then(response => {
-      console.log(response.data);
+      axios({
+        method: 'get',
+        url: 'https://www.potterapi.com/v1/characters',
+        dataResponse: 'json',
+        params: {
+          key: '$2a$10$F5zeX2iHFskAgcz4ovhm4.BUaurcM.C9u5ncrkPda4RSBOgdTO8JK',
+        },
+      }).then(data => {
+        console.log(data.data);
+  
+        this.setState({
+          HPCharacters: data.data,
+        })
 
-      this.setState({
-        HPCharacters: response.data,
-      });
     });
   }
+
 
   render() {
     return (
       <div className='wrapper'>
         <h1>Game of Potter</h1>
-        <p>Test test test</p>
-        <p>Keils test</p>
+        <p></p>
       </div>
     );
   }
