@@ -1,12 +1,18 @@
 import React, { Component } from "react";
 import "./styles/App.css";
 import axios from "axios";
+import RandomizeCharactersHP from './RandomizeCharactersHP';
 
 class GetHpCharacters extends Component {
   constructor() {
     super();
     this.state = {
-      hpCharacters: [],
+      hpCharacters: [{
+        name: "",
+        house: "",
+        birth: "",
+        image: ""
+      }],
     };
   }
 
@@ -38,7 +44,8 @@ class GetHpCharacters extends Component {
   render() {
     return (
       <div className='hpCharacters'>
-        {this.state.hpCharacters.map(character => {
+        <RandomizeCharactersHP charactersArray={this.state.hpCharacters}/>
+        {/* {this.state.hpCharacters.map(character => {
           return (
             <div className='test2'>
               <h3>{character.name}</h3>
@@ -47,7 +54,7 @@ class GetHpCharacters extends Component {
               <img className='hpImages' src={character.image} alt='' />
             </div>
           );
-        })}
+        })} */}
       </div>
     );
   }
