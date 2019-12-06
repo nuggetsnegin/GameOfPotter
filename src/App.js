@@ -23,7 +23,7 @@ class App extends Component {
   render() {
     return (
       <div className='wrapper'>
-        <h1>Game of Potter</h1>
+        <h1>Game of Potter HELLO?</h1>
         <GetGotCharacters/>
         <GetHpCharacters/>
         <RandomizeCharacters gotCharactersArray={this.state.gotCharacters}/>
