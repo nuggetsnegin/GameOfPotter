@@ -3,13 +3,14 @@ import "./styles/App.css";
 import axios from "axios";
 import RandomizeCharacters from "./RandomizeCharacters";
 import GetCharacterImages from "./RandomizeCharacters";
+import GotLogic from "./GotLogic";
 
 let arrayOfHouses = [];
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      HPCharacters: [],
+      hpCharacters: [],
       gotCharacters: [],
       gotHouses: [
         "House Stark",
@@ -110,6 +111,7 @@ class App extends Component {
                     src={character.image}
                     alt=''
                   />
+                  <GotLogic character= {this.state.gotCharacters}/>
                 </div>
               );
             })}
