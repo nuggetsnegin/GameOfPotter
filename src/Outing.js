@@ -26,6 +26,7 @@ class Outing extends Component {
                     image: restaurant.url,
                     cuisine: restaurant.cuisines,
                 }
+                // console.log(restaurant)
                 this.setState({
                     suggestions: [...this.state.suggestions, restaurantsObject],
                 });
@@ -39,7 +40,7 @@ class Outing extends Component {
             <div className='wrapper'>
                 <h2>Outing Suggestions</h2>
                 <div className='outingSuggestions'>
-                    {this.state.outing.map( (options) => {
+                    {this.state.suggestions.map( (restaurant) => {
                         return (
                             <div>
                                 <h3>{restaurant.name}</h3>
