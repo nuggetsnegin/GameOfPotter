@@ -8,7 +8,6 @@ class HpLogic extends Component {
             value: 0
         };
     }
-    
     getRandomHP = (e, randomCharacter) => {
         e.preventDefault();
         const hpOriginalArray = this.props.character
@@ -16,19 +15,19 @@ class HpLogic extends Component {
 
         // let value = 0;
 
-        const hpCharactersHouse = hpOriginalArray.filter( (hpHouse) => {
+        const hpCharactersHouse = hpOriginalArray.filter((hpHouse) => {
             if (hpHouse.house === "Gryffindor") {
                 // console.log("Gryffindor")
-                return hpHouse.value=90 
+                return hpHouse.value = 90
             } else if (hpHouse.house === "Hufflepuff") {
                 // console.log("Hufflepuff")
-                return hpHouse.value=70 
+                return hpHouse.value = 70
             } else if (hpHouse.house === "Ravenclaw") {
                 // console.log("Ravenclaw")
-                return hpHouse.value=50 
+                return hpHouse.value = 50
             } else if (hpHouse.house === "Slytherin") {
                 // console.log("Slytherin")
-                return hpHouse.value=30 
+                return hpHouse.value = 30
             }
             // return hpHouse[randomCharacter] === true
         })
@@ -49,7 +48,7 @@ class HpLogic extends Component {
     }
 
     render() {
-        return(
+        return (
             <div>
                 <button onClick={this.getRandomHP}></button>
             </div>
