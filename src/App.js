@@ -26,7 +26,7 @@ class App extends Component {
         <h1>Game of Potter HELLO?</h1>
         <GetGotCharacters/>
         <GetHpCharacters/>
-        <RandomizeCharacters gotCharactersArray={this.state.gotCharacters}/>
+        {/* <RandomizeCharacters gotCharactersArray={this.state.gotCharacters}/> */}
 
       </div>
     );
