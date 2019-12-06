@@ -8,7 +8,6 @@ class HpLogic extends Component {
             value: 0
         };
     }
-
     getRandomHP = (e, randomCharacter) => {
         e.preventDefault();
         const hpOriginalArray = this.props.character
