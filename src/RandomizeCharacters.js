@@ -24,7 +24,7 @@ const RandomizeCharacters = props => {
   console.log(randomCharacter);
 
 //   console.log(randomCharacter.name);
-    let newRandomCharacter;
+  let newRandomCharacter;
   if(randomCharacter !== undefined) {
     newRandomCharacter = randomCharacter;
   }
