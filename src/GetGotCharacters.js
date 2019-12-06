@@ -31,23 +31,33 @@ class GetGotCharacters extends Component {
         `https://api.got.show/api/book/characters/byHouse/${this.state.gotHouses[3]}`
       ),
     ]).then(data => {
+
+      let arrayOfHouses = [];
+
       data.forEach(house => {
+        let arrayOfCharacters = [];
         house.data.forEach(character => {
           if (character.house !== undefined && character.birth !== undefined) {
             if (character.image === undefined) {
               character.image = placeholderImage;
             }
-            const characterObject = {
-              name: character.name,
-              house: character.house,
-              alive: character.alive,
-              age: character.birth,
-              image: character.image,
-            };
+
+            house.data.forEach(character => {
+              const characterObject = {
+                name: character.name,
+                house: character.house,
+                alive: character.alive,
+                age: character.birth,
+                image: character.image,
+              };
+              arrayOfCharacters.push(characterObject)
+            });
+
             console.log(characterObject);
 
             this.setState({
-              gotCharacters: [...this.state.gotCharacters, characterObject],
+              gotCharacters: arrayOfHouses
+              // gotCharacters: [...this.state.gotCharacters, characterObject],
             });
           }
         });

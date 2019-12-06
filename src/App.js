@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./styles/App.css";
 import GetGotCharacters from './GetGotCharacters'
-import GetHpCharacters from './GetHpCharacters'
+import GetHpCharacters from './GetHpCharacter'
 
 let arrayOfHouses = [];
 class App extends Component {
@@ -25,6 +25,7 @@ class App extends Component {
         <h1>Game of Potter</h1>
         <GetGotCharacters/>
         <GetHpCharacters/>
+        <RandomizeCharacter gotCharactersArray={this.state.gotCharacters}/>
 
       </div>
     );
