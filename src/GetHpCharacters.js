@@ -15,6 +15,9 @@ class GetHpCharacters extends Component {
       url: `http://hp-api.herokuapp.com/api/characters`,
       method: "get",
     }).then(data => {
+
+      let arrayOfCharacters = [];
+
       data.data.forEach(character => {
         if (character.house !== "" && character.yearOfBirth !== "") {
           const characterObject = {
@@ -23,11 +26,12 @@ class GetHpCharacters extends Component {
             image: character.image,
             birth: character.yearOfBirth,
           };
+          arrayOfCharacters.push(characterObject);  
 
-          this.setState({
-            hpCharacters: [...this.state.hpCharacters, characterObject],
-          });
         }
+      });
+      this.setState({
+        hpCharacters: arrayOfCharacters,
       });
     });
   }

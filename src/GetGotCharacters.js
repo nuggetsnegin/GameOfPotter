@@ -31,8 +31,6 @@ class GetGotCharacters extends Component {
       ),
     ]).then(data => {
 
-      // let arrayOfHouses = [];
-    
       let arrayOfCharacters = [];
 
       data.forEach(house => {
