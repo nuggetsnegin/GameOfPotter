@@ -20,6 +20,16 @@ h1{
     margin: 0;
 }
 
+h3{
+    font-size: 5rem;
+    font-family: $heading-font;
+}
+
+.hpCharacters,
+.gotCharacters{
+    background-color: $accent-color;
+}
+
 body{
     background-color: $light-color;
     font-family: $body-font;
@@ -32,4 +42,34 @@ p{
 .wrapper{
     max-width: 1200px;
     margin: 0 auto;
+}
+
+img {
+    width: 50%;
+    height: 50%;
+}
+
+.imageContainer {
+    width: 200px;
+}
+
+ul, li {
+    list-style: none;
+}
+
+.characters{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 15px;
+    grid-template-areas:
+    "got hp";
+}
+
+.gotCharacters{
+    grid: got;
+}
+
+.hpCharacters{
+    grid: hp;
 }

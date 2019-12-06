@@ -3,12 +3,12 @@ import axios from 'axios';
 
 class Outing extends Component {
 
-    // constructor() {
-    //     super();
-    //     this.state = {
-    //         restaurants: response.data.restaurants
-    //     };
-    // }
+    constructor() {
+        super();
+        this.state = {
+            suggestions: []
+        };
+    }
 
     componentDidMount() {
         axios({
@@ -18,24 +18,40 @@ class Outing extends Component {
             headers: {
                 "user-key": 'a43d2ac63efba3212ecc9c702a40317c',
             }
-        }).then((response) => {
-            console.log(response.data.restaurants)  
+        }).then(response => {
+            // console.log(response.data.restaurants)
+            response.data.restaurants.forEach(restaurant => {
+                const restaurantsObject = {
+                    name: restaurant.name,
+                    image: restaurant.url,
+                    cuisine: restaurant.cuisines,
+                }
+                this.setState({
+                    suggestions: [...this.state.suggestions, restaurantsObject],
+                });
+            });
         });
-    
-        // this.setState({
-        //     restaurants: response.data.restaurants[0].restaurant,
-        // })
     }
 
 
     render() {
-        return (
-         <div>
-             <p>
-                 
-             </p>
-         </div>
-        );
+        return(
+            <div className='wrapper'>
+                <h2>Outing Suggestions</h2>
+                <div className='outingSuggestions'>
+                    {this.state.outing.map( (options) => {
+                        return (
+                            <div>
+                                <h3>{restaurant.name}</h3>
+                                <img src={restaurant.url} alt=""/>
+                                <h3>{restaurant.cuisines}</h3>
+                                {/* <h4>{options.user_rating.response.data.restaurants}</h4> */}
+                            </div>
+                        );
+                    })}
+                </div>
+            </div>
+        )
     };
 };
 
