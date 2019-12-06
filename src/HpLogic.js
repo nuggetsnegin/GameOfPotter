@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 
 class HpLogic extends Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
-            
+            value: 0
         };
     }
     
@@ -14,7 +14,7 @@ class HpLogic extends Component {
         const hpOriginalArray = this.props.character
         console.log(hpOriginalArray)
 
-        let value = 0;
+        // let value = 0;
 
         const hpCharactersHouse = hpOriginalArray.filter( (hpHouse) => {
             if (hpHouse.house === "Gryffindor") {
@@ -33,18 +33,18 @@ class HpLogic extends Component {
             // return hpHouse[randomCharacter] === true
         })
 
-        const hpCharactersAge = hpOriginalArray.filter ( (hpAge) => {
-            if (hpAge.age % 2 === 0)
-                return hpAge.value=50
-            else (hpAge.age % 3 === 0)
-                return hpAge.value=25
-        })
+        // const hpCharactersAge = hpOriginalArray.filter ( (hpAge) => {
+        //     if (hpAge.age % 2 === 0)
+        //         return hpAge.value=50
+        //     else (hpAge.age % 3 === 0)
+        //         return hpAge.value=25
+        // })
 
-        this.setState({
-            hpHouse: hpCharactersHouse,
-            // hpAge: hpCharactersAge,
-        })
-        // console.log(this.state.hpHouse)
+        // this.setState({
+        //     hpHouse: hpCharactersHouse,
+        //     // hpAge: hpCharactersAge,
+        // })
+        // // console.log(this.state.hpHouse)
 
     }
 
