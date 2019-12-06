@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
-import placeholderImage from './assets/cameraPlaceholder.jpg'
+import placeholderImage from './assets/cameraPlaceholder.jpg';
+import RandomizeCharacters from './RandomizeCharacters';
+
+
 class GetGotCharacters extends Component {
   constructor() {
     super();
@@ -63,7 +66,8 @@ class GetGotCharacters extends Component {
     
     return (
       <div className='gotCharacters'>
-        {this.state.gotCharacters.map(character => {
+        <RandomizeCharacters gotCharactersArray={this.state.gotCharacters} />
+        {/* {this.state.gotCharacters.map(character => {
           return (
             <div className='individualGotCharacter'>
               <h3>{character.name}</h3>
@@ -73,7 +77,7 @@ class GetGotCharacters extends Component {
               <img className='gotImages' src={character.image} alt='' />
             </div>
           );
-        })}
+        })} */}
       </div>
     );
   }
