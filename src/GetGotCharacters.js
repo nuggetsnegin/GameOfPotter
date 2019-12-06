@@ -50,10 +50,11 @@ class GetGotCharacters extends Component {
                 age: character.birth,
                 image: character.image,
               };
-              arrayOfCharacters.push(characterObject)
+              arrayOfCharacters.push(characterObject);
+              console.log(characterObject);
+
             });
 
-            console.log(characterObject);
 
             this.setState({
               gotCharacters: arrayOfHouses

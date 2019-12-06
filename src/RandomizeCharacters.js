@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
-const RandomizeCharacter = (props) => {
-    // console.log(props);
+const RandomizeCharacters = (props) => {
 
     // generate a random number between 0 and 3
     const randomNumberHouse = Math.floor(Math.random() * 3);
@@ -33,4 +32,4 @@ const RandomizeCharacter = (props) => {
     ) 
 };
 
-export default RandomizeCharacter;
+export default RandomizeCharacters;

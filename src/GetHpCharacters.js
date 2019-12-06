@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./styles/App.css";
 import axios from "axios";
 
-class GetHpCharacter extends Component {
+class GetHpCharacters extends Component {
   constructor() {
     super();
     this.state = {
@@ -49,4 +49,4 @@ class GetHpCharacter extends Component {
   }
 }
 
-export default GetHpCharacter;
+export default GetHpCharacters;
