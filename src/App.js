@@ -8,7 +8,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      hpCharacters: [],
+      HPCharacters: [],
       gotCharacters: [],
       gotHouses: [
         "House Stark",
@@ -52,8 +52,16 @@ class App extends Component {
           const characterObject = {
             name: character.name,
             house: character.house,
+            alive: character.alive,
+            age: character.birth,
+            image: character.image,
           };
           arrayOfCharacters.push(characterObject)
+          // this.setState({
+          //   gotCharacters: [...this.state.gotCharacters, characterObject],
+          // });
+          // console.log(characterObject);
+
           // this.setState({
           //   gotCharacters: [...this.state.gotCharacters, characterObject],
           // });
@@ -92,7 +100,6 @@ class App extends Component {
     //   });
     // });
   }
-
   render() {
     return (
       <div className='wrapper'>
