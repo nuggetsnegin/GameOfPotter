@@ -36,7 +36,7 @@ class GetHpCharacters extends Component {
       <div className='hpCharacters'>
         {this.state.hpCharacters.map(character => {
           return (
-            <div class='test2'>
+            <div className='test2'>
               <h3>{character.name}</h3>
               <p>{character.house}</p>
               <p>{character.birth}</p>

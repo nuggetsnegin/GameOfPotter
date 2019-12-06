@@ -32,40 +32,51 @@ class GetGotCharacters extends Component {
       ),
     ]).then(data => {
 
-      let arrayOfHouses = [];
+      // let arrayOfHouses = [];
+      // let arrayOfCharacters = [];
 
       data.forEach(house => {
-        let arrayOfCharacters = [];
         house.data.forEach(character => {
           if (character.house !== undefined && character.birth !== undefined) {
             if (character.image === undefined) {
               character.image = placeholderImage;
             }
-
-            house.data.forEach(character => {
-              const characterObject = {
-                name: character.name,
-                house: character.house,
-                alive: character.alive,
-                age: character.birth,
-                image: character.image,
-              };
-              arrayOfCharacters.push(characterObject);
-              console.log(characterObject);
-
-            });
-
+            const characterObject = {
+              name: character.name,
+              house: character.house,
+              alive: character.alive,
+              age: character.birth,
+              image: character.image,
+            };
+            // console.log(characterObject);
 
             this.setState({
-              gotCharacters: arrayOfHouses
-              // gotCharacters: [...this.state.gotCharacters, characterObject],
+              gotCharacters: [...this.state.gotCharacters, characterObject],
             });
+
+            // house.data.forEach(character => {
+            //   const characterObject = {
+            //     name: character.name,
+            //     house: character.house,
+            //     alive: character.alive,
+            //     age: character.birth,
+            //     image: character.image,
+            //   };
+            //   arrayOfCharacters.push(characterObject);
+            //   // console.log(characterObject);
+            // });
+            
+
+            // this.setState({
+            //   gotCharacters: [...this.state.gotCharacters, characterObject],
+            // });
           }
         });
       });
     });
   }
   render() {
+    
     return (
       <div className='gotCharacters'>
         {this.state.gotCharacters.map(character => {
