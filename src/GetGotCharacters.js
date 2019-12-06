@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 import placeholderImage from './assets/cameraPlaceholder.jpg'
-
 class GetGotCharacters extends Component {
   constructor() {
     super();
@@ -17,7 +16,7 @@ class GetGotCharacters extends Component {
   }
 
   componentDidMount() {
-    const gotMultipleAPI = Promise.all([
+    Promise.all([
       axios.get(
         `https://api.got.show/api/book/characters/byHouse/${this.state.gotHouses[0]}`
       ),
@@ -33,7 +32,8 @@ class GetGotCharacters extends Component {
     ]).then(data => {
 
       // let arrayOfHouses = [];
-      // let arrayOfCharacters = [];
+    
+      let arrayOfCharacters = [];
 
       data.forEach(house => {
         house.data.forEach(character => {
@@ -48,32 +48,18 @@ class GetGotCharacters extends Component {
               age: character.birth,
               image: character.image,
             };
-            // console.log(characterObject);
-
-            this.setState({
-              gotCharacters: [...this.state.gotCharacters, characterObject],
-            });
-
-            // house.data.forEach(character => {
-            //   const characterObject = {
-            //     name: character.name,
-            //     house: character.house,
-            //     alive: character.alive,
-            //     age: character.birth,
-            //     image: character.image,
-            //   };
-            //   arrayOfCharacters.push(characterObject);
-            //   // console.log(characterObject);
-            // });
-            
-
-            // this.setState({
-            //   gotCharacters: [...this.state.gotCharacters, characterObject],
-            // });
+            arrayOfCharacters.push(characterObject);  
           }
         });
+        
       });
+      this.setState({
+        gotCharacters: arrayOfCharacters
+      });
+      
     });
+
+
   }
   render() {
     
