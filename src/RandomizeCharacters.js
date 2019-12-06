@@ -2,11 +2,11 @@ import React, { Component } from "react";
 
 const RandomizeCharacters = props => {
 //   // gotCharactersArray
-  console.log(props.gotCharactersArray);
+//   console.log(props.gotCharactersArray);
 
 
   const arrayLength = props.gotCharactersArray.length;
-  // console.log(arrayLength);
+//   console.log(arrayLength);
 
   // const arrayLength = randomHouse.length was coming back undefined???
   // used if statement to get
@@ -22,17 +22,21 @@ const RandomizeCharacters = props => {
   // use that random number as an index to pick a character from the house
   const randomCharacter = props.gotCharactersArray[randomNumberCharacter];
   console.log(randomCharacter);
-// console.log(randomCharacter[0]);
+
+//   console.log(randomCharacter.name);
+    let newRandomCharacter;
+  if(randomCharacter !== undefined) {
+    newRandomCharacter = randomCharacter;
+  }
   
 
   return(
       <div className='individualGotCharacter'>
-          {/* <h3>{randomCharacter.name}</h3> */}
-          {/* <h3>{randomCharacter.name}</h3>
+          <h3>{newRandomCharacter.name}</h3>
           <p>
-              {randomCharacter.house}, {randomCharacter.age}
+              {newRandomCharacter.house}, {newRandomCharacter.age}
           </p>
-          <img className='gotImages' src={randomCharacter.image} alt='' /> */}
+          <img className='gotImages' src={newRandomCharacter.image} alt='' />
       </div>
   ) 
 };

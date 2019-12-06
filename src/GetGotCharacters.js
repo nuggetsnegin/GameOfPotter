@@ -8,7 +8,12 @@ class GetGotCharacters extends Component {
   constructor() {
     super();
     this.state = {
-      gotCharacters: [],
+      gotCharacters: [{
+        name: "",
+        house: "",
+        age: "",
+        image: ""
+      }],
       gotHouses: [
         "House Stark",
         "House Lannister",
@@ -54,6 +59,9 @@ class GetGotCharacters extends Component {
         });
         
       });
+
+      console.log(arrayOfCharacters);
+      
       this.setState({
         gotCharacters: arrayOfCharacters
       });
