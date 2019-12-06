@@ -12,7 +12,7 @@ class GetGotCharacters extends Component {
         name: "",
         house: "",
         age: "",
-        image: ""
+        image: "",
       }],
       gotHouses: [
         "House Stark",
