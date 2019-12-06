@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import placeholderImage from './assets/cameraPlaceholder.jpg';
-import RandomizeCharacters from './RandomizeCharacters';
+import RandomizeCharactersGot from './RandomizeCharactersGot';
 
 
 class GetGotCharacters extends Component {
@@ -60,7 +60,7 @@ class GetGotCharacters extends Component {
         
       });
 
-      console.log(arrayOfCharacters);
+      // console.log(arrayOfCharacters);
       
       this.setState({
         gotCharacters: arrayOfCharacters
@@ -74,7 +74,7 @@ class GetGotCharacters extends Component {
     
     return (
       <div className='gotCharacters'>
-        <RandomizeCharacters gotCharactersArray={this.state.gotCharacters} />
+        <RandomizeCharactersGot charactersArray={this.state.gotCharacters} />
         {/* {this.state.gotCharacters.map(character => {
           return (
             <div className='individualGotCharacter'>

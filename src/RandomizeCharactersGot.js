@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 
-const RandomizeCharacters = props => {
+const RandomizeCharactersGot = props => {
 //   // gotCharactersArray
 //   console.log(props.gotCharactersArray);
 
 
-  const arrayLength = props.gotCharactersArray.length;
+  const arrayLength = props.charactersArray.length;
 //   console.log(arrayLength);
 
   // const arrayLength = randomHouse.length was coming back undefined???
@@ -18,10 +18,10 @@ const RandomizeCharacters = props => {
 
   // generate a random number between 0 and that length
   const randomNumberCharacter = Math.floor(Math.random() * arrayLength);
-  console.log(randomNumberCharacter);
+  // console.log(randomNumberCharacter);
   // use that random number as an index to pick a character from the house
-  const randomCharacter = props.gotCharactersArray[randomNumberCharacter];
-  console.log(randomCharacter);
+  const randomCharacter = props.charactersArray[randomNumberCharacter];
+  // console.log(randomCharacter);
 
   let newRandomCharacter;
   if(randomCharacter !== undefined) {
@@ -40,4 +40,4 @@ const RandomizeCharacters = props => {
   ) 
 };
 
-export default RandomizeCharacters;
+export default RandomizeCharactersGot;
