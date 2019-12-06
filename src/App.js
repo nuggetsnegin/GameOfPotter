@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import "./styles/App.css";
-import GetGotCharacters from './GetGotCharacters'
-import GetHpCharacters from './GetHpCharacters'
-import RandomizeCharacters from './RandomizeCharacters'
+import GetGotCharacters from "./GetGotCharacters";
+import GetHpCharacters from "./GetHpCharacters";
+import heart from './assets/heart.png';
+import RandomizeCharacters from "./RandomizeCharacters";
 
 let arrayOfHouses = [];
 class App extends Component {
@@ -23,11 +24,13 @@ class App extends Component {
   render() {
     return (
       <div className='wrapper'>
-        <h1>Game of Potter HELLO?</h1>
-        <GetGotCharacters/>
-        <GetHpCharacters/>
-        {/* <RandomizeCharacters gotCharactersArray={this.state.gotCharacters}/> */}
-
+        <h1>Game of Potter</h1>
+        <div className='gridContainer'>
+          <GetGotCharacters />
+          <img className='heart' src={heart} alt=""/>
+          <GetHpCharacters />
+          {/* <RandomizeCharacters gotCharactersArray={this.state.gotCharacters}/> */}
+        </div>
       </div>
     );
   }
