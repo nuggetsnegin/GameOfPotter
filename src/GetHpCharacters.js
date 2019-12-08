@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./styles/App.css";
 import axios from "axios";
-import RandomizeCharactersHP from './RandomizeCharactersHP';
+import RandomizeCharacters from './RandomizeCharacters';
 
 class GetHpCharacters extends Component {
   constructor() {
@@ -30,7 +30,7 @@ class GetHpCharacters extends Component {
             name: character.name,
             house: character.house,
             image: character.image,
-            birth: character.yearOfBirth,
+            age: character.yearOfBirth,
           };
           arrayOfCharacters.push(characterObject);  
 
@@ -44,7 +44,11 @@ class GetHpCharacters extends Component {
   render() {
     return (
       <div className='hpCharacters'>
-        <RandomizeCharactersHP charactersArray={this.state.hpCharacters}/>
+        <RandomizeCharacters
+          charactersArray={this.state.hpCharacters}
+          setAppState={this.props.setAppState}
+          type='Hp' 
+        />
         {/* {this.state.hpCharacters.map(character => {
           return (
             <div className='test2'>
