@@ -11,28 +11,20 @@ class RandomizeCharacter extends Component {
 
   componentDidUpdate() {
     const arrayLength = this.props.charactersArray.length;
-    //   console.log(arrayLength);
-
-    // const arrayLength = randomHouse.length was coming back undefined???
-    // used if statement to get
-
-    // get the length of the house array chosen above
-    //   const arrayLength = randomHouse.length;
-    //   console.log(arrayLength);
-
 
     // generate a random number between 0 and that length
     const randomNumberCharacter = Math.floor(Math.random() * arrayLength);
-    // console.log(randomNumberCharacter);
+
     // use that random number as an index to pick a character from the house
     const randomCharacter = this.props.charactersArray[randomNumberCharacter];
-    // console.log(randomCharacter);
 
     if (
       randomCharacter !== undefined &&
       randomCharacter.name && 
-      !this.state.randomCharacter) {
-        // The props for the button should go here
+      !this.state.randomCharacter
+      // this.props.buttonClick !== this.state.buttonClick
+      // The props for the button should go here
+      ) {
       this.setState( {
         randomCharacter
       })
@@ -63,6 +55,5 @@ class RandomizeCharacter extends Component {
     )
   }
 } 
-
 
 export default RandomizeCharacter;

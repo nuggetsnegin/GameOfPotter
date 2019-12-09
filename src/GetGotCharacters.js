@@ -50,7 +50,6 @@ class GetGotCharacters extends Component {
             const characterObject = {
               name: character.name,
               house: character.house,
-              alive: character.alive,
               age: character.birth,
               image: character.image,
             };
@@ -66,7 +65,7 @@ class GetGotCharacters extends Component {
       
     });
   }
-  
+
   render() {
     return (
       <div className='gotCharacters'>

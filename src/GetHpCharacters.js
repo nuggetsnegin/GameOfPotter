@@ -10,8 +10,8 @@ class GetHpCharacters extends Component {
       hpCharacters: [{
         name: "",
         house: "",
-        birth: "",
-        image: ""
+        age: "",
+        image: "",
       }],
     };
   }
@@ -49,16 +49,6 @@ class GetHpCharacters extends Component {
           setAppState={this.props.setAppState}
           type='Hp' 
         />
-        {/* {this.state.hpCharacters.map(character => {
-          return (
-            <div className='test2'>
-              <h3>{character.name}</h3>
-              <p>{character.house}</p>
-              <p>{character.birth}</p>
-              <img className='hpImages' src={character.image} alt='' />
-            </div>
-          );
-        })} */}
       </div>
     );
   }
