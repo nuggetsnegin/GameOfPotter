@@ -22,13 +22,13 @@ class App extends Component {
         <h1>Game of Potter</h1>
         <div className='gridContainer'>
           <GetGotCharacters setAppState={value => this.setState(value)} />
-          <img className='heart' src={heart} alt=""/>
+          <img className='heartIcon' src={heart} alt=""/>
           <StatsMatch 
             got={this.state.randomGotCharacter}
             hp={this.state.randomHpCharacter}
           />
           <GetHpCharacters setAppState={value => this.setState(value)} />
-          {/* <Outing /> */}
+          <Outing />
         </div>
       </div>
     );

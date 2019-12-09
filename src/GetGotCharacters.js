@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import placeholderImage from './assets/cameraPlaceholder.jpg'
-import RandomizeCharacters from './RandomizeCharacters'
 
 class GetGotCharacters extends Component {
   constructor () {

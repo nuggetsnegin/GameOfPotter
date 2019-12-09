@@ -46,7 +46,7 @@ class Outing extends Component {
 
     render() {
         return(
-            <div className='wrapper outing'>
+            <div className='outing'>
                 <h2>Outing Suggestions</h2>
                 <div className='outingSuggestions'>
                     <ul>
