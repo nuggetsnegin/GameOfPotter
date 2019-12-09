@@ -1,4 +1,5 @@
 import React from 'react'
+import heart from './assets/heart.png';
 
 const calculateCharacterPoints = character => {
   let totalPoints = 0
@@ -48,6 +49,7 @@ const StatsMatch = props => {
   const value = combineStats(props.hp, props.got)
   return (
     <div className='affinityWrapper'>
+     <img className='heartIcon' src={heart} alt="Icon of a red heart"/>
       <div className='message'><h3>{pointMessages(value)}</h3></div>
       <div className='affinity'><h2>{value}%</h2></div>
     </div>

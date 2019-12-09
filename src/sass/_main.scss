@@ -62,15 +62,19 @@ ul, li {
     gap: 5px;
     grid-template-areas:
     "got heart hp"
-    "outing outing outing";
+    "message message message";
 }
 
 .gotCharacters{
     grid-area: got;
 }
 
-.affinityWrapper{
-    grid-area: outing;
+.message{
+    grid-area: message;
+}
+
+.heartIcon{
+    grid-area: heart;
 }
 
 .hpCharacters{
@@ -96,12 +100,13 @@ ul, li {
     grid-area: got;
 }
 
-.outing{
-    grid-area: outing;
-}
+// .outing{
+//     grid-area: outing;
+// }
 
 .message{
     text-align: center;
+    grid-area: message;
 }
 
 .gotImages,
