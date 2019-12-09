@@ -60,18 +60,14 @@ class GetGotCharacters extends Component {
         
       });
 
-      // console.log(arrayOfCharacters);
-      
       this.setState({
         gotCharacters: arrayOfCharacters
       });
       
     });
-
-
   }
+  
   render() {
-    
     return (
       <div className='gotCharacters'>
         <RandomizeCharacters
@@ -79,17 +75,6 @@ class GetGotCharacters extends Component {
           setAppState={this.props.setAppState} 
           type='Got' 
         />
-        {/* {this.state.gotCharacters.map(character => {
-          return (
-            <div className='individualGotCharacter'>
-              <h3>{character.name}</h3>
-              <p>
-                {character.house}, {character.age}
-              </p>
-              <img className='gotImages' src={character.image} alt='' />
-            </div>
-          );
-        })} */}
       </div>
     );
   }

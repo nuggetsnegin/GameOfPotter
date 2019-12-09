@@ -37,7 +37,6 @@ class App extends Component {
             hp = {this.state.randomHpCharacter}
           />
           <GetHpCharacters setAppState={value => this.setState(value)} />
-          {/* <RandomizeCharacters gotCharactersArray={this.state.gotCharacters}/> */}
           {/* <button>Match Me! ❤️</button> */}
           <Outing />
         </div>

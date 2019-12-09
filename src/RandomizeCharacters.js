@@ -32,6 +32,7 @@ class RandomizeCharacter extends Component {
       randomCharacter !== undefined &&
       randomCharacter.name && 
       !this.state.randomCharacter) {
+        // The props for the button should go here
       this.setState( {
         randomCharacter
       })

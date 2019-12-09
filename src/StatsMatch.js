@@ -42,7 +42,6 @@ const StatsMatch = (props) => {
             {value}
         </div>
     )
-
 }
 
 export default StatsMatch
