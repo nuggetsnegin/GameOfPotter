@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import './styles/App.css'
 import axios from 'axios'
-import RandomizeCharacters from './RandomizeCharacters'
 
 class GetHpCharacters extends Component {
   constructor () {
