@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import placeholderImage from './assets/cameraPlaceholder.jpg';
-import RandomizeCharactersGot from './RandomizeCharactersGot';
+import RandomizeCharacters from './RandomizeCharacters';
 
 
 class GetGotCharacters extends Component {
@@ -60,32 +60,21 @@ class GetGotCharacters extends Component {
         
       });
 
-      // console.log(arrayOfCharacters);
-      
       this.setState({
         gotCharacters: arrayOfCharacters
       });
       
     });
-
-
   }
+  
   render() {
-    
     return (
       <div className='gotCharacters'>
-        <RandomizeCharactersGot charactersArray={this.state.gotCharacters} />
-        {/* {this.state.gotCharacters.map(character => {
-          return (
-            <div className='individualGotCharacter'>
-              <h3>{character.name}</h3>
-              <p>
-                {character.house}, {character.age}
-              </p>
-              <img className='gotImages' src={character.image} alt='' />
-            </div>
-          );
-        })} */}
+        <RandomizeCharacters
+          charactersArray={this.state.gotCharacters} 
+          setAppState={this.props.setAppState} 
+          type='Got' 
+        />
       </div>
     );
   }

@@ -6,7 +6,12 @@ class Outing extends Component {
     constructor() {
         super();
         this.state = {
-            suggestions: []
+            suggestions: [{
+                name: '',
+                review: '',
+                cuisine: '',
+                image: '',
+            }],
         };
     }
 
@@ -19,17 +24,21 @@ class Outing extends Component {
                 "user-key": 'a43d2ac63efba3212ecc9c702a40317c',
             }
         }).then(response => {
-            // console.log(response.data.restaurants)
-            response.data.restaurants.forEach(restaurant => {
+
+            const restaurants = response.data.restaurants;
+            
+            let arrayOfRestaurants = restaurants.map(suggestion => {
                 const restaurantsObject = {
-                    name: restaurant.name,
-                    image: restaurant.url,
-                    cuisine: restaurant.cuisines,
-                }
-                // console.log(restaurant)
-                this.setState({
-                    suggestions: [...this.state.suggestions, restaurantsObject],
-                });
+                    name: suggestion.restaurant.name,
+                    image: suggestion.restaurant.thumb,
+                    cuisine: suggestion.restaurant.cuisines,
+                    review: suggestion.restaurant.user_rating.aggregate_rating,
+                };
+                return restaurantsObject;
+            });
+
+            this.setState({
+                suggestions: arrayOfRestaurants,
             });
         });
     }
@@ -37,19 +46,21 @@ class Outing extends Component {
 
     render() {
         return(
-            <div className='wrapper'>
+            <div className='wrapper outing'>
                 <h2>Outing Suggestions</h2>
                 <div className='outingSuggestions'>
-                    {this.state.suggestions.map( (restaurant) => {
-                        return (
-                            <div>
-                                <h3>{restaurant.name}</h3>
-                                <img src={restaurant.url} alt=""/>
-                                <h3>{restaurant.cuisines}</h3>
-                                {/* <h4>{options.user_rating.response.data.restaurants}</h4> */}
-                            </div>
-                        );
-                    })}
+                    <ul>
+                        {this.state.suggestions.map(suggestion => {
+                            return (
+                                <li>
+                                    <h3>{suggestion.name}</h3>
+                                    <h4>{suggestion.review}</h4>
+                                    <h3>{suggestion.cuisine}</h3>
+                                    <img src={suggestion.image} alt=""/>
+                                </li>
+                            );
+                        })}
+                    </ul>
                 </div>
             </div>
         )
