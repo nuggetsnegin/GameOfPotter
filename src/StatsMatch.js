@@ -4,7 +4,7 @@ const calculateCharacterPoints = character => {
   let totalPoints = 0
 
   const house = character.house
-  if (house === 'Gryffindor' || house === 'House Stark') { totalPoints += Math.floor(Math.random() * 10) + 21 }
+  if (house === 'Gryffindor' || house === 'House Stark') { totalPoints += Math.floor(Math.random() * 10) + 41 }
   if (house === 'Hufflepuff' || house === 'House Tyrell') { totalPoints += Math.floor(Math.random() * 10) + 11 }
   if (house === 'Ravenclaw') totalPoints += Math.floor(Math.random() * 5) + 10
   if (house === 'House Greyjoy') { totalPoints -= Math.floor(Math.random() * 5) + 1 }
@@ -49,7 +49,7 @@ const StatsMatch = props => {
   return (
     <div className='affinityWrapper'>
       <div className='message'><h3>{pointMessages(value)}</h3></div>
-      <div className='affinity'><p>{value}%</p></div>
+      <div className='affinity'><h2>{value}%</h2></div>
     </div>
   )
 }
