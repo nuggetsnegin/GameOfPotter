@@ -38,7 +38,7 @@ const StatsMatch = (props) => {
     }
     const value = stats(props.hp, props.got)
     return (
-        <div>
+        <div className="affinity">
             {value}
         </div>
     )
