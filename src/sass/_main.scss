@@ -59,11 +59,11 @@ ul, li {
 
 .gridContainer{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto;
-    gap: 15px;
+    gap: 5px;
     grid-template-areas:
-    "got heart hp";
+    "got heart affinity hp";
 }
 
 .gotCharacters{
@@ -73,4 +73,12 @@ ul, li {
 
 .hpCharacters{
       grid: hp;
+}
+
+.affinity{
+    grid: heart;
+}
+
+.individualGotCharacter{
+    grid: got;
 }
