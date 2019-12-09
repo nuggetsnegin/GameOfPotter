@@ -186,31 +186,9 @@ html {
   font-size: 62.5%;
 }
 
-h1 {
-  font-size: 10rem;
-  text-align: center;
-  font-family: "Libre Caslon Display", serif;
-  color: #171c20;
-  margin: 0;
-}
-
-h3 {
-  font-size: 5rem;
-  font-family: "Libre Caslon Display", serif;
-}
-
-.hpCharacters,
-.gotCharacters {
-  background-color: #d0a360;
-}
-
 body {
-  background-color: #e4e4df;
   font-family: "Poppins", sans-serif;
-}
-
-p {
-  font-size: 2rem;
+  background-color: #171c20;
 }
 
 .wrapper {
@@ -219,16 +197,183 @@ p {
 }
 
 img {
-  width: 50%;
-  height: 50%;
+  display: block;
+  width: 100%;
 }
 
-.imageContainer {
-  width: 200px;
+.title {
+  font-family: "Libre Caslon Display", serif;
+  font-size: 10rem;
+  color: #d0a360;
+  text-align: center;
+  margin: 0;
+  height: 15vh;
+}
+
+h3 {
+  font-family: "Libre Caslon Display", serif;
+  font-size: 5rem;
+  margin-bottom: 0;
+}
+
+p {
+  font-size: 2rem;
 }
 
 ul, li {
   list-style: none;
+}
+
+.hpCharacters,
+.gotCharacters {
+  background-color: #e4e4df;
+  margin-top: 15%;
+  min-height: 70vh;
+}
+
+.gotImage,
+.hpImage {
+  width: 50%;
+  height: 50%;
+}
+
+.gridContainer {
+  background-image: url(../assets/backgroundImage.jpg);
+  height: 85vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: (80vh)[1];
+      grid-template-rows: repeat(1, 80vh);
+  gap: 5px;
+      grid-template-areas: "got seal hp";
+}
+
+.gotCharacters {
+  grid: got;
+}
+
+.sealIcon {
+  grid: seal;
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.individualGotCharacter {
+  grid: got;
+}
+
+.hpCharacters {
+  grid: hp;
+}
+
+.iconContainer {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
+  padding: 10%;
+}
+
+.iconContainer h4 {
+  position: absolute;
+  top: 50%;
+  left: 35%;
+  font-size: 3rem;
+  text-align: center;
+  margin: 0;
+  color: #e4e4df;
+}
+
+.affinity {
+  position: absolute;
+  top: 48%;
+  left: 47%;
+  font-size: 4rem;
+  color: #e4e4df;
+}
+
+.randomizeCharacter {
+  font-size: 1.6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px 15px;
+  border-radius: 8px;
+  background-color: #d0a360;
+  color: #171c20;
+  -webkit-transition: 0.35s;
+  transition: 0.35s;
+}
+
+.randomizeCharacter:hover,
+.randomizeCharacter:focus {
+  background-color: #171c20;
+  color: #d0a360;
+}
+
+.outing {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.outing .title {
+  padding: 2%;
+}
+
+.outing .outingSuggestions ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  color: #e4e4df;
+  margin: 0;
+  padding: 0;
+}
+
+.outing .outingSuggestions ul img {
+  width: 90%;
+}
+
+.outing .outingSuggestions ul li {
+  border: 1px solid #d0a360;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: calc(100% / 3);
+  margin: 0;
+  padding: 1%;
+}
+
+.outing .outingSuggestions ul li .restaurantInfo {
+  margin: 0;
+  width: 100%;
+}
+
+.outing .outingSuggestions ul li h3 {
+  margin: 0;
+  margin-left: 5%;
+  font-size: 2.5rem;
+}
+
+.outing .outingSuggestions ul li h4 {
+  font-size: 1.8rem;
+  margin: 0;
+  margin-left: 5%;
+}
+
+.outing h2 {
+  font-size: 5rem;
 }
 
 .gridContainer {
@@ -240,36 +385,9 @@ ul, li {
       grid-template-rows: repeat(2, -webkit-min-content);
       grid-template-rows: repeat(2, min-content);
   gap: 5px;
-      grid-template-areas: "got heart hp" "outing outing outing";
+      grid-template-areas: "got heart hp" "outing title outing";
 }
 
-.gotCharacters {
-  grid: got;
-}
-
-.hpCharacters {
-  grid: hp;
-}
-
-.heartIcon {
-  grid: heart;
-  position: relative;
-  width: 500px;
-  height: 500px;
-}
-
-.affinity {
-  position: absolute;
-  top: 35%;
-  left: 48%;
-  font-size: 4rem;
-  color: #e4e4df;
-}
-
-.individualGotCharacter {
-  grid: got;
-}
-
-.outing {
-  grid: outing;
+.title {
+  grid: title;
 }

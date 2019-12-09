@@ -1,0 +1,17 @@
+.outing h2 {
+    font-size: 5rem;
+}
+
+.gridContainer{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, min-content);
+    gap: 5px;
+    grid-template-areas:
+    "got heart hp"
+    "outing title outing";
+}
+
+.title {
+    grid: title;
+}
