@@ -236,10 +236,11 @@ ul, li {
   display: grid;
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
-  -ms-grid-rows: auto;
-      grid-template-rows: auto;
-  gap: 15px;
-      grid-template-areas: "got heart hp";
+  -ms-grid-rows: (min-content)[2];
+      grid-template-rows: repeat(2, -webkit-min-content);
+      grid-template-rows: repeat(2, min-content);
+  gap: 5px;
+      grid-template-areas: "got heart hp" "outing outing outing";
 }
 
 .gotCharacters {
@@ -248,4 +249,27 @@ ul, li {
 
 .hpCharacters {
   grid: hp;
+}
+
+.heartIcon {
+  grid: heart;
+  position: relative;
+  width: 500px;
+  height: 500px;
+}
+
+.affinity {
+  position: absolute;
+  top: 35%;
+  left: 48%;
+  font-size: 4rem;
+  color: #e4e4df;
+}
+
+.individualGotCharacter {
+  grid: got;
+}
+
+.outing {
+  grid: outing;
 }

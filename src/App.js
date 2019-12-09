@@ -4,38 +4,15 @@ import "./styles/App.css";
 // import GetGotCharacters from "./GetGotCharacters";
 // import GetHpCharacters from "./GetHpCharacters";
 import heart from './assets/heart.png';
-import placeholderImage from './assets/cameraPlaceholder.jpg';
-// import RandomizeCharacters from "./RandomizeCharacters";
-// import Outing from './Outing.js';
+import Outing from './Outing.js';
 import StatsMatch from './StatsMatch.js';
-
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      // hpCharacters: [],
-      hpCharacters: [{
-        name: "",
-        house: "",
-        age: "",
-        image: "",
-      }],
-      // gotCharacters: [],
-      gotCharacters: [{
-        name: "",
-        house: "",
-        age: "",
-        image: "",
-      }],
       randomGotCharacter: {},
-      randomHpCharacter: {},
-      gotHouses: [
-        "House Stark",
-        "House Lannister",
-        "House Tyrell",
-        "House Greyjoy",
-      ],
+      randomHpCharacter: {}
     };
   }
 
@@ -141,42 +118,19 @@ class App extends Component {
   // }
 
   render() {
+    console.log(this.state);
     return (
       <div className='wrapper'>
         <h1>Game of Potter</h1>
         <div className='gridContainer'>
-          {/* <Match 
-           gotCharacter={this.state.randomGotCharacter}
-           hpCharacter={this.state.randomHpCharacter}
-           rematch = {this.rematch}
-          /> */}
-          {/* <GetGotCharacters setAppState={value => this.setState(value)} /> This will be moved to App.js ComponenetDidMount */}
-          <div className='gotCharacters'>
-            <div className='individualGotCharacter'>
-              <h3>{this.state.randomCharacter.name}</h3>
-              <p>
-                {this.state.randomCharacter.house}, {this.state.randomCharacter.age}
-              </p>
-              <img className='gotImages' src={this.state.randomCharacter.image} alt='' />
-            </div>
-          </div>
-          <img className='heart' src={heart} alt=""/>
+          <GetGotCharacters setAppState={value => this.setState(value)} />
+          <img className='heartIcon' src={heart} alt=""/>
           <StatsMatch 
-            got = {this.state.randomGotCharacter}
-            hp = {this.state.randomHpCharacter}
+            got={this.state.randomGotCharacter}
+            hp={this.state.randomHpCharacter}
           />
-          {/* <button setAppState={value => this.setState(value)}>Match Me! ❤️</button> */}
-          {/* <GetHpCharacters setAppState={value => this.setState(value)} /> This will be moved to App.js ComponenetDidMount */}
-          <div className='hpCharacters'>
-            <div className='individualGotCharacter'>
-              <h3>{this.state.randomCharacter.name}</h3>
-              <p>
-                {this.state.randomCharacter.house}, {this.state.randomCharacter.age}
-              </p>
-              <img className='gotImages' src={this.state.randomCharacter.image} alt='' />
-            </div>
-          </div>
-          {/* <Outing /> */}
+          <GetHpCharacters setAppState={value => this.setState(value)} />
+          <Outing />
         </div>
       </div>
     );

@@ -60,10 +60,11 @@ ul, li {
 .gridContainer{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto;
-    gap: 15px;
+    grid-template-rows: repeat(2, min-content);
+    gap: 5px;
     grid-template-areas:
-    "got heart hp";
+    "got heart hp"
+    "outing outing outing";
 }
 
 .gotCharacters{
@@ -73,4 +74,28 @@ ul, li {
 
 .hpCharacters{
       grid: hp;
+}
+
+.heartIcon{
+    grid: heart;
+    position: relative;
+    width: 500px;
+    height: 500px;
+}
+
+.affinity{
+    position: absolute;
+    top: 35%;
+    left: 48%;
+    font-size: 4rem;
+    color: $light-color;
+}
+
+
+.individualGotCharacter{
+    grid: got;
+}
+
+.outing{
+    grid: outing;
 }
