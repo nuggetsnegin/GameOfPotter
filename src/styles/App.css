@@ -244,11 +244,22 @@ ul, li {
 }
 
 .gotCharacters {
-  grid: got;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: got;
+}
+
+.affinityWrapper {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: outing;
 }
 
 .hpCharacters {
-  grid: hp;
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: hp;
 }
 
 .heartIcon {
@@ -267,9 +278,25 @@ ul, li {
 }
 
 .individualGotCharacter {
-  grid: got;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: got;
 }
 
 .outing {
-  grid: outing;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: outing;
+}
+
+.message {
+  text-align: center;
+}
+
+.gotImages,
+.hpImages {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
 }

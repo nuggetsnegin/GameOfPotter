@@ -68,12 +68,15 @@ ul, li {
 }
 
 .gotCharacters{
-    grid: got;
+    grid-area: got;
 }
 
+.affinityWrapper{
+    grid-area: outing;
+}
 
 .hpCharacters{
-      grid: hp;
+      grid-area: hp;
 }
 
 .heartIcon{
@@ -93,9 +96,20 @@ ul, li {
 
 
 .individualGotCharacter{
-    grid: got;
+    grid-area: got;
 }
 
 .outing{
-    grid: outing;
+    grid-area: outing;
+}
+
+.message{
+    text-align: center;
+}
+
+.gotImages,
+.hpImages{
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
 }

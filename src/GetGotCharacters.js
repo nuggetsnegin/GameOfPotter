@@ -101,7 +101,7 @@ class GetGotCharacters extends Component {
     return (
       <div className='gotCharacters'>
         <div className='individualGotCharacter'>
-          <h3>{randomGotCharacter.name}</h3>
+          <h2>{randomGotCharacter.name}</h2>
           <p>
             {randomGotCharacter.house}
           </p>

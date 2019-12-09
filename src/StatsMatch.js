@@ -48,8 +48,8 @@ const StatsMatch = props => {
   const value = combineStats(props.hp, props.got)
   return (
     <div className='affinityWrapper'>
+      <div className='message'><h3>{pointMessages(value)}</h3></div>
       <div className='affinity'><p>{value}%</p></div>
-      <div className='message'><p>{pointMessages(value)}</p></div>
     </div>
   )
 }
