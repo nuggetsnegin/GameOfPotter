@@ -47,25 +47,68 @@ class App extends Component {
       const newArray = cloneArray.filter((restaurant) => {
         return restaurant.review <= 4.2;
       })
-      this.setState({
-        filteredRestaurant: newArray
-      })
+
+       // if the incoming array has more than 3 items, get three random numbers and use those numbers to grab 3 random restaurants, and then set that array to state
+      if (newArray.length > 3) {
+        let smallArray = [];
+        // create array of 3 random Numbers and use to pick 3 random restaurants from the array newArray
+        for (let i = 0; i < 3; i++) {
+          // generate a random number between 0 and the newArray length
+          const randomNumber = Math.floor(Math.random() * newArray.length)
+          smallArray.push(newArray[randomNumber])
+        }
+        this.setState({
+          filteredRestaurant: smallArray
+        })
+        // else if the incoming array already has only 3 items, just put that array of 3 in state
+      } else {
+        this.setState({
+          filteredRestaurant: newArray
+        })
+      }  
     } 
     else if (this.state.matchValue > 40 && this.state.matchValue <= 60) {
       const newArray = cloneArray.filter((restaurant) => {
         return restaurant.review <= 4.5 && restaurant.review > 4.2;
       })
-      this.setState({
-        filteredRestaurant: newArray
-      })
-    } 
-    else if (this.state.matchValue > 60) {
+
+      if (newArray.length > 3) {
+        let smallArray = [];
+        // create array of 3 random Numbers
+        for (let i = 0; i < 3; i++) {
+          // generate a random number between 0 and the newArray length
+          const randomNumber = Math.floor(Math.random() * newArray.length)
+          smallArray.push(newArray[randomNumber])
+        }
+        this.setState({
+          filteredRestaurant: smallArray
+        })
+      } else {
+        this.setState({
+          filteredRestaurant: newArray
+        })
+      }
+    } else if (this.state.matchValue > 60) {
       const newArray = cloneArray.filter((restaurant) => {
         return restaurant.review > 4.5;
       })
-      this.setState({
-        filteredRestaurant: newArray
-      })
+
+      if (newArray.length > 3) {
+        let smallArray = [];
+        // create array of 3 random Numbers
+        for (let i = 0; i < 3; i++) {
+          // generate a random number between 0 and the newArray length
+          const randomNumber = Math.floor(Math.random() * newArray.length)
+          smallArray.push(newArray[randomNumber])
+        }
+        this.setState({
+          filteredRestaurant: smallArray
+        })
+      } else {
+        this.setState({
+          filteredRestaurant: newArray
+        })
+      }
     } 
   }
 
