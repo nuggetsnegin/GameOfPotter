@@ -212,6 +212,7 @@ h3 {
 body {
   background-color: #e4e4df;
   font-family: "Poppins", sans-serif;
+  height: 97vh;
 }
 
 p {
@@ -225,7 +226,6 @@ p {
 .wrapper {
   max-width: 1600px;
   margin: 0 auto;
-  height: 97vh;
 }
 
 ul,
@@ -242,7 +242,7 @@ li {
       grid-template-rows: repeat(2, -webkit-min-content);
       grid-template-rows: repeat(2, min-content);
   gap: 5px;
-      grid-template-areas: "got heart hp" "message message message";
+      grid-template-areas: "got heart hp" "message message message";
 }
 
 .gotCharacters {
@@ -283,7 +283,7 @@ li {
 
 .affinity {
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 46%;
   color: #e4e4df;
 }
@@ -339,6 +339,7 @@ button {
   padding: 20px 15px;
   font-size: 2rem;
   border-radius: 25px;
+  margin-bottom: 1%;
 }
 
 button:hover {
