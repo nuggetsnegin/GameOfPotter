@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/GameOfPotter/precache-manifest.5b7a6c59ab40a7d7116d4b0daf8e51e2.js"
+  "/GameOfPotter/precache-manifest.25ef11f6a33f4fdbbb67960a4b8a90dc.js"
 );
 
 self.addEventListener('message', (event) => {

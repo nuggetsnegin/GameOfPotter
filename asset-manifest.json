@@ -1,21 +1,23 @@
 {
   "files": {
-    "main.css": "/GameOfPotter/static/css/main.1b6a8f63.chunk.css",
-    "main.js": "/GameOfPotter/static/js/main.f5f4e1eb.chunk.js",
-    "main.js.map": "/GameOfPotter/static/js/main.f5f4e1eb.chunk.js.map",
+    "main.css": "/GameOfPotter/static/css/main.0107a22b.chunk.css",
+    "main.js": "/GameOfPotter/static/js/main.63871786.chunk.js",
+    "main.js.map": "/GameOfPotter/static/js/main.63871786.chunk.js.map",
     "runtime-main.js": "/GameOfPotter/static/js/runtime-main.ba95b4d8.js",
     "runtime-main.js.map": "/GameOfPotter/static/js/runtime-main.ba95b4d8.js.map",
-    "static/js/2.aec09a83.chunk.js": "/GameOfPotter/static/js/2.aec09a83.chunk.js",
-    "static/js/2.aec09a83.chunk.js.map": "/GameOfPotter/static/js/2.aec09a83.chunk.js.map",
+    "static/js/2.695465c8.chunk.js": "/GameOfPotter/static/js/2.695465c8.chunk.js",
+    "static/js/2.695465c8.chunk.js.map": "/GameOfPotter/static/js/2.695465c8.chunk.js.map",
     "index.html": "/GameOfPotter/index.html",
-    "precache-manifest.5b7a6c59ab40a7d7116d4b0daf8e51e2.js": "/GameOfPotter/precache-manifest.5b7a6c59ab40a7d7116d4b0daf8e51e2.js",
+    "precache-manifest.25ef11f6a33f4fdbbb67960a4b8a90dc.js": "/GameOfPotter/precache-manifest.25ef11f6a33f4fdbbb67960a4b8a90dc.js",
     "service-worker.js": "/GameOfPotter/service-worker.js",
-    "static/css/main.1b6a8f63.chunk.css.map": "/GameOfPotter/static/css/main.1b6a8f63.chunk.css.map"
+    "static/css/main.0107a22b.chunk.css.map": "/GameOfPotter/static/css/main.0107a22b.chunk.css.map",
+    "static/media/App.css": "/GameOfPotter/static/media/backgroundPattern.f9500e7a.jpg",
+    "static/media/cameraPlaceholder.jpg": "/GameOfPotter/static/media/cameraPlaceholder.b48d69c3.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.ba95b4d8.js",
-    "static/js/2.aec09a83.chunk.js",
-    "static/css/main.1b6a8f63.chunk.css",
-    "static/js/main.f5f4e1eb.chunk.js"
+    "static/js/2.695465c8.chunk.js",
+    "static/css/main.0107a22b.chunk.css",
+    "static/js/main.63871786.chunk.js"
   ]
 }
