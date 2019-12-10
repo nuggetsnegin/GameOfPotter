@@ -78,13 +78,14 @@ class App extends Component {
             <StatsMatch
               got={this.state.randomGotCharacter}
               hp={this.state.randomHpCharacter}
+              sendValue={this.handleValue}
             />
             <GetHpCharacters setAppState={value => this.setState(value)} />
                 <Outing
                   getReview={this.handleGetReview}
                   passReview={this.state.suggestions}
                   // passMatchValue={this.state.matchValue}
-                  sendValue={this.handleValue}
+                  // sendValue={this.handleValue}
                   filteredRestaurants={filteredRestaurant}
                 />
           </main>
