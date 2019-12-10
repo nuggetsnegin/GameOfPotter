@@ -1,16 +1,22 @@
 import React, { Component } from 'react'
+import heart from './assets/heart.png'
 
-export default class HeartAnimation extends Component {
+class HeartAnimation extends Component {
     render() {
+
+        console.log(this.props.totalPoints);
         return (
-            <div>
-                
-            </div>
+            <img className='heartIcon' src={heart} alt='Icon of a red heart' style={{
+                WebkitAnimation: "heartbeat 1.5s ease-in-out infinite both",
+                animation: "heartbeat 1.5s ease-in-out infinite both"
+            }}/>
         )
     }
 }
 
-.heartbeat {
-    -webkit-animation: heartbeat 1.5s ease-in-out infinite both;
-    animation: heartbeat 1.5s ease-in-out infinite both;
-  }
+// .heartbeat {
+//     -webkit-animation: heartbeat 1.5s ease-in-out infinite both;
+//     animation: heartbeat 1.5s ease-in-out infinite both;
+//   }
+
+export default HeartAnimation
