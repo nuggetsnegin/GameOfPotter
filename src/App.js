@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import "./styles/App.css";
 import GetGotCharacters from "./GetGotCharacters";
 import GetHpCharacters from "./GetHpCharacters";

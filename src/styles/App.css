@@ -180,6 +180,21 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   overflow: hidden;
 }
 
+/* Skip-line for accessibility */
+.skipLink {
+  position: absolute;
+  left: -1000px;
+  top: 5px;
+  z-index: 999;
+  background: transparent;
+  color: transparent;
+}
+
+.skipLink:focus {
+  left: 0;
+}
+
+/* Global Styles End Here */
 /*VARIABLES*/
 /*FONT*/
 /*MAIN STYLING*/
@@ -379,6 +394,72 @@ footer {
 
 footer span {
   color: #d0a360;
+}
+
+.outing {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.outing .title {
+  margin: 5% 0;
+  text-shadow: 4px 3px 3px #e4e4df;
+}
+
+.outing .outingSuggestions ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  color: #e4e4df;
+  margin: 0;
+  padding: 0;
+}
+
+.outing .outingSuggestions ul .restaurantImg {
+  width: 50%;
+  border-radius: 50%;
+  border: 5px solid #d0a360;
+}
+
+.outing .outingSuggestions ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: calc(100% / 3);
+  height: 240px;
+  margin: 0;
+  padding: 1%;
+}
+
+.outing .outingSuggestions ul li .restaurantInfo {
+  margin: 5% 0;
+  width: 100%;
+}
+
+.outing .outingSuggestions ul li .restaurantInfo h3, .outing .outingSuggestions ul li .restaurantInfo h4, .outing .outingSuggestions ul li .restaurantInfo h5 {
+  margin: 5%;
+  margin-left: 5%;
+}
+
+.outing .outingSuggestions ul li .restaurantInfo h3 {
+  font-size: 2.6rem;
+}
+
+.outing .outingSuggestions ul li .restaurantInfo h4 {
+  font-size: 1.7rem;
+}
+
+.outing .outingSuggestions ul li .restaurantInfo h5 {
+  font-size: 1.5rem;
 }
 
 .heartbeat {
