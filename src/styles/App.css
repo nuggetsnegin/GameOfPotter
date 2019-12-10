@@ -472,8 +472,6 @@ footer span {
   .individualGotCharacter,
   .individualHpCharacter {
     min-height: 350px;
-    -ms-flex-preferred-size: bottom;
-        flex-basis: bottom;
   }
 }
 
