@@ -10,33 +10,34 @@ class App extends Component {
     super()
     this.state = {
       randomGotCharacter: {},
-      randomHpCharacter: {},
+      randomHpCharacter: {}
     }
   }
 
-
-
   render () {
-    console.log(this.state)
     return (
       <div className='app'>
-      <div className='wrapper'>
-        <h1>Game of Potter</h1>
-        <p className='introduction'>
-          Hi there! Have you ever wanted to know which <span>Game of Thrones</span> and <span>Harry Potter </span> 
-          characters could be BFFS? No? Well.. too bad!
-        </p>
-        <div className='gridContainer'>
-          <GetGotCharacters setAppState={value => this.setState(value)} />
-          <StatsMatch
-            got={this.state.randomGotCharacter}
-            hp={this.state.randomHpCharacter}
-          />
-          <GetHpCharacters setAppState={value => this.setState(value)} />
-          {/* <Outing /> */}
+        <div className='wrapper'>
+          <h1>Game of Potter</h1>
+          <p className='introduction'>
+            Hi there! Have you ever wanted to know which{' '}
+            <span>Game of Thrones</span> and <span>Harry Potter </span>
+            characters could be BFFS? No? Well.. too bad!
+          </p>
+          <div className='gridContainer'>
+            <GetGotCharacters setAppState={value => this.setState(value)} />
+            <StatsMatch
+              got={this.state.randomGotCharacter}
+              hp={this.state.randomHpCharacter}
+            />
+            <GetHpCharacters setAppState={value => this.setState(value)} />
+            {/* <Outing /> */}
+          </div>
         </div>
-      </div>
-      <footer>Made with magic & blood by <span>Negin</span>, <span>Sarah</span>, <span>Nuno</span> & <span>Keil</span> 2019</footer>
+        <footer>
+          Made with magic & blood by <span>Negin</span>, <span>Sarah</span>,{' '}
+          <span>Nuno</span> & <span>Keil</span> 2019
+        </footer>
       </div>
     )
   }

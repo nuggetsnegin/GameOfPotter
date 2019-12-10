@@ -14,7 +14,7 @@ class GetHpCharacters extends Component {
           image: ''
         }
       ],
-      randomHPCharacter: {}
+      randomHPCharacter: {} /*holding random character*/
     }
   }
 
