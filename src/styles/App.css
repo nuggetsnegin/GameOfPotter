@@ -203,8 +203,9 @@ html {
 }
 
 header {
-  min-height: 15vh;
+  min-height: 10vh;
   background-color: #171c20;
+  border-bottom: 3px solid #d0a360;
 }
 
 main {
@@ -212,13 +213,12 @@ main {
 }
 
 h1 {
-  font-size: 10rem;
+  font-size: 7rem;
   text-align: center;
   font-family: "Libre Caslon Display", serif;
   color: #d0a360;
   margin: 0;
   letter-spacing: -3px;
-  text-shadow: 2px 2px #6e1b1b;
 }
 
 h2 {
@@ -286,11 +286,19 @@ button:focus {
   display: grid;
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
-  -ms-grid-rows: (min-content)[3];
-      grid-template-rows: repeat(3, -webkit-min-content);
-      grid-template-rows: repeat(3, min-content);
+  -ms-grid-rows: (min-content)[4];
+      grid-template-rows: repeat(4, -webkit-min-content);
+      grid-template-rows: repeat(4, min-content);
   gap: 5px;
-      grid-template-areas: "introduction introduction introduction" "got heart hp" "message message message";
+      grid-template-areas: "introduction introduction introduction" "got heart hp" "message message message" "outing outing outing";
+}
+
+.outing {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: outing;
+  background-color: #171c20;
 }
 
 .app {
@@ -373,7 +381,7 @@ button:focus {
   -ms-grid-column-span: 3;
   grid-area: introduction;
   text-align: center;
-  width: 50%;
+  width: 70%;
   margin: 0 auto;
   font-size: 2rem;
 }
@@ -384,6 +392,7 @@ button:focus {
 
 footer {
   background-color: #171c20;
+  border-top: 2px solid #d0a360;
   color: #e4e4df;
   text-align: center;
   min-height: 4vh;
@@ -404,11 +413,15 @@ footer span {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  border-top: 2px solid #d0a360;
 }
 
 .outing .title {
-  margin: 5% 0;
-  text-shadow: 4px 3px 3px #e4e4df;
+  font-size: 5rem;
+  text-align: center;
+  padding: 20px;
+  color: #d0a360;
+  border: none;
 }
 
 .outing .outingSuggestions ul {
@@ -423,7 +436,8 @@ footer span {
 }
 
 .outing .outingSuggestions ul .restaurantImg {
-  width: 50%;
+  min-width: 200px;
+  min-height: 200px;
   border-radius: 50%;
   border: 5px solid #d0a360;
 }
@@ -443,7 +457,9 @@ footer span {
   width: 100%;
 }
 
-.outing .outingSuggestions ul li .restaurantInfo h3, .outing .outingSuggestions ul li .restaurantInfo h4, .outing .outingSuggestions ul li .restaurantInfo h5 {
+.outing .outingSuggestions ul li .restaurantInfo h3,
+.outing .outingSuggestions ul li .restaurantInfo h4,
+.outing .outingSuggestions ul li .restaurantInfo h5 {
   margin: 5%;
   margin-left: 5%;
 }
