@@ -5,7 +5,7 @@ import GetHpCharacters from "./GetHpCharacters";
 import Outing from "./Outing.js";
 import StatsMatch from "./StatsMatch.js";
 
-let filteredRestaurant = {}
+// let filteredRestaurant = {}
 
 class App extends Component {
   constructor() {
@@ -15,7 +15,7 @@ class App extends Component {
       randomHpCharacter: {},
       suggestions: [],
       matchValue: '',
-      filteredRestaurant: {}
+      filteredRestaurant: []
     };
   }
 
@@ -30,32 +30,36 @@ class App extends Component {
     // this.setState({
     //   matchValue: value
     // })
-    console.log(this.state.suggestions);
-    this.state.suggestions.filter((restaurant) => {
+    const cloneArray = [...this.state.suggestions];
+    // console.log(this.state.suggestions);
+    
       // console.log(value);
       // console.log(restaurant.review);
     // let filteredRestaurant = {}
-      if (value <= '40%' && restaurant.review <= 4.2) {
-        // console.log(value);
-        console.log(restaurant);
-        // return restaurant
-        // filteredRestaurant = restaurant;
-        // console.log(filteredRestaurant);
-        // this.setState({
-        //   filteredRestaurant: restaurant
-        // })
-        
-      } else if (value > '40%' && value <= '60%' && restaurant.review <= 4.5 && restaurant.review > 4.2) {
-        // console.log(restaurant);
-        // return restaurant
-        // filteredRestaurant = restaurant;
-      } else if (value > '60%' && restaurant.review > 4.5) {
-        // console.log(restaurant);
-        // return restaurant
-        // filteredRestaurant = restaurant;
-        
-      }
-    })  
+    if (value <= 40) {
+      // console.log(value);
+      // console.log(restaurant);
+
+      const newArray = cloneArray.filter((restaurant) => {
+        return restaurant.review <= 4.2;
+      })
+      // this.setState({
+      //   filteredRestaurant: newArray
+      // })
+      console.log(newArray);
+      
+
+    } 
+    // else if (value > 40 && value <= 60 && restaurant.review <= 4.5 && restaurant.review > 4.2) {
+    //   // console.log(restaurant);
+    //   // return restaurant
+    //   // filteredRestaurant = restaurant;
+    // } else if (value > 60 && restaurant.review > 4.5) {
+    //   // console.log(restaurant);
+    //   // return restaurant
+    //   // filteredRestaurant = restaurant;
+      
+    // } 
   }
 
 
@@ -86,7 +90,7 @@ class App extends Component {
                   passReview={this.state.suggestions}
                   // passMatchValue={this.state.matchValue}
                   // sendValue={this.handleValue}
-                  filteredRestaurants={filteredRestaurant}
+                  // filteredRestaurants={filteredRestaurant}
                 />
           </main>
         </div>

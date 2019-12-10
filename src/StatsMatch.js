@@ -52,6 +52,8 @@ const combineStats = (hp, got) => {
 };
 
 const StatsMatch = props => {
+  console.log("I'll get you gadget next time");
+  
   if (!props.hp.name || !props.got.name) {
     return null;
   }

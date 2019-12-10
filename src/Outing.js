@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-// let suggestions = []
-let filteredRestaurants = []
+let suggestions = []
+// let filteredRestaurants = []
 class Outing extends Component {
 
     constructor() {
@@ -21,6 +21,8 @@ class Outing extends Component {
 
 
     componentDidMount() {
+        console.log("go go gadget");
+        
         axios({
             url: 'https://developers.zomato.com/api/v2.1/search?entity_id=89&entity_type=city',
             method:'GET',
@@ -41,11 +43,11 @@ class Outing extends Component {
                 };
                 return restaurantsObject;
             });
-            // suggestions =  arrayOfRestaurants
+            suggestions =  arrayOfRestaurants
         })
-        // .then(() => {
-        //     this.props.getReview(suggestions);
-        // });
+        .then(() => {
+            this.props.getReview(suggestions);
+        });
     }
 
     // console.log(restaurant.review)
@@ -53,16 +55,20 @@ class Outing extends Component {
                             //     console.log(restaurant);
 
                             // }
-    getRestaurants = () => {
-        filteredRestaurants = this.props.filteredRestaurants
-        console.log(filteredRestaurants);
+    // getRestaurants = () => {
+    //     filteredRestaurants = this.props.filteredRestaurants
+    //     console.log(filteredRestaurants);
         
+    // }
+
+    getRestaurants = () => {
+
     }
 
 
     render() {
         console.log(this.props);
-        this.getRestaurants(this.props.filteredRestaurants)
+        // this.getRestaurants(this.props.filteredRestaurants)
         
         // this.getFilteredRestaurantFromProps()
         return(
