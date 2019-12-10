@@ -53,7 +53,7 @@ class Outing extends Component {
   render() {
     return (
       <div className='outing'>
-        <div class='wrapper'>
+        <div className='wrapper'>
           <h2 className='title'>Date Night Suggestions</h2>
           <div className='outingSuggestions'>
             <ul>
