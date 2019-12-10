@@ -16,7 +16,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <div className='wrapper'>
         <h1 className="title">Game of Potter</h1>
@@ -32,9 +31,7 @@ class App extends Component {
           />
           <GetHpCharacters setAppState={value => this.setState(value)} />
         </div>
-        <div className="outingContainer">
           <Outing />
-        </div>
       </div>
     );
   }

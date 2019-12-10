@@ -56,8 +56,8 @@ class Outing extends Component {
                                     <img className='restaurantImg' src={suggestion.image} alt=""/>
                                     <div className="restaurantInfo">
                                         <h3>{suggestion.name}</h3>
-                                        <h4>{suggestion.review}</h4>
-                                        <h3>{suggestion.cuisine}</h3>
+                                        <h5>Review:  {suggestion.review} ⭐️</h5>
+                                        <h4>Cuisine: {suggestion.cuisine}</h4>
                                     </div>
                                 </li>
                             );

@@ -1,69 +1,16 @@
-/*VARIABLES*/
-$dark-color: #171c20;
-$accent-color: #d0a360;
-$light-color: #e4e4df;
-$body-font: 'Poppins', sans-serif;
-$heading-font: 'Libre Caslon Display', serif;
-
-/*FONT*/
-@import url('https://fonts.googleapis.com/css?family=Libre+Caslon+Display|Poppins&display=swap');
-
-html {
-    font-size: 62.5%;
-}
-
-body {
-    font-family: $body-font;
-    background-color: $dark-color;
-}
-
-.wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-img {
-    display: block;
-    width: 100%;
-}
-
-.title {
-    font-family: $heading-font;
-    font-size: 10rem;
-    color: $accent-color;
-    text-align: center;
-    margin: 0;
-    height: 15vh;
-}
-
-h3 {
-    font-family: $heading-font;
-    font-size: 5rem;
-    margin-bottom: 0;
-}
-
-p {
-    font-size: 2rem;
-}
-
-ul, li {
-    list-style: none;
-}
+/* MAIN */
 
 .hpCharacters,
 .gotCharacters {
     background-color: $light-color;
     margin-top: 15%;
     min-height: 70vh;
-    // display: flex;
-    // justify-content: center;
 }
 
 .gotImage, 
 .hpImage {
     width: 50%;
     height: 50%;
-
 }
 
 .gridContainer {
@@ -75,7 +22,6 @@ ul, li {
     gap: 5px;
     grid-template-areas:
     "got seal hp"
-    // "outing title outing";
 }
 
 .gotCharacters {
@@ -97,26 +43,22 @@ ul, li {
     grid: hp;
 }
 
-// .outing {
-//     grid: outing;
-// }
-
 .iconContainer {
     position: relative;
     display: flex;
     align-self: center;
-    padding: 10%
+    padding: 10%;
+    h4 {
+        position: absolute;
+        top: 50%;
+        left: 35%;
+        font-size: 3rem;
+        text-align: center;
+        margin: 0;
+        color: $light-color;
+    }
 }
 
-.iconContainer h4 {
-    position: absolute;
-    top: 50%;
-    left: 35%;
-    font-size: 3rem;
-    text-align: center;
-    margin: 0;
-    color: $light-color;
-}
 
 .affinity {
     position: absolute;
@@ -126,9 +68,6 @@ ul, li {
     color: $light-color;
 }
 
-
-
-
 .randomizeCharacter {
     font-size: 1.6rem;
     display: flex;
@@ -137,54 +76,9 @@ ul, li {
     background-color: $accent-color;
     color: $dark-color;
     transition: 0.35s;
-}
-
-.randomizeCharacter:hover, 
-.randomizeCharacter:focus {
-    background-color: $dark-color;
-    color: $accent-color;
-}
-
-
-// Outing Styles //@at-root
-
-.outing {
-    display: flex;
-    flex-direction: column;
-    .title {
-        padding: 2%;
-    }
-    .outingSuggestions {
-        ul {
-            display: flex;
-            flex-wrap: wrap;
-            color: $light-color;
-            margin: 0;
-            padding: 0;
-            img {
-                width: 90%;
-            }
-            li {
-                border: 1px solid $accent-color;
-                display: flex;
-                width: calc(100% / 3);
-                margin: 0;
-                padding: 1%;
-                .restaurantInfo {
-                    margin: 0;
-                    width: 100%;
-                }
-                h3 {
-                    margin: 0;
-                    margin-left: 5%;
-                    font-size: 2.5rem;
-                }
-                h4 {
-                    font-size: 1.8rem;
-                    margin: 0;
-                    margin-left: 5%;
-                }
-            }
-        }
+    &:hover,
+    &:focus {
+        background-color: $dark-color;
+        color: $accent-color;
     }
 }

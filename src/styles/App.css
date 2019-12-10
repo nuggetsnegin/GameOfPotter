@@ -180,8 +180,9 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   overflow: hidden;
 }
 
-/*VARIABLES*/
-/*FONT*/
+/* VARIABLES */
+/* FONT */
+/* GLOBAL */
 html {
   font-size: 62.5%;
 }
@@ -224,6 +225,22 @@ ul, li {
   list-style: none;
 }
 
+/* Skip-line for accessibility */
+.skipLink {
+  position: absolute;
+  left: -1000px;
+  top: 5px;
+  z-index: 999;
+  background: transparent;
+  color: transparent;
+}
+
+.skipLink:focus {
+  left: 0;
+}
+
+/* Global Styles End Here */
+/* MAIN */
 .hpCharacters,
 .gotCharacters {
   background-color: #e4e4df;
@@ -310,8 +327,7 @@ ul, li {
   transition: 0.35s;
 }
 
-.randomizeCharacter:hover,
-.randomizeCharacter:focus {
+.randomizeCharacter:hover, .randomizeCharacter:focus {
   background-color: #171c20;
   color: #d0a360;
 }
@@ -320,6 +336,8 @@ ul, li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -327,7 +345,8 @@ ul, li {
 }
 
 .outing .title {
-  padding: 2%;
+  margin: 5% 0;
+  text-shadow: 4px 3px 3px #e4e4df;
 }
 
 .outing .outingSuggestions ul {
@@ -341,53 +360,40 @@ ul, li {
   padding: 0;
 }
 
-.outing .outingSuggestions ul img {
-  width: 90%;
+.outing .outingSuggestions ul .restaurantImg {
+  width: 50%;
+  border-radius: 50%;
+  border: 5px solid #d0a360;
 }
 
 .outing .outingSuggestions ul li {
-  border: 1px solid #d0a360;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: calc(100% / 3);
+  height: 240px;
   margin: 0;
   padding: 1%;
 }
 
 .outing .outingSuggestions ul li .restaurantInfo {
-  margin: 0;
+  margin: 5% 0;
   width: 100%;
 }
 
-.outing .outingSuggestions ul li h3 {
-  margin: 0;
-  margin-left: 5%;
-  font-size: 2.5rem;
-}
-
-.outing .outingSuggestions ul li h4 {
-  font-size: 1.8rem;
-  margin: 0;
+.outing .outingSuggestions ul li .restaurantInfo h3, .outing .outingSuggestions ul li .restaurantInfo h4, .outing .outingSuggestions ul li .restaurantInfo h5 {
+  margin: 5%;
   margin-left: 5%;
 }
 
-.outing h2 {
-  font-size: 5rem;
+.outing .outingSuggestions ul li .restaurantInfo h3 {
+  font-size: 2.6rem;
 }
 
-.gridContainer {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
-  -ms-grid-rows: (min-content)[2];
-      grid-template-rows: repeat(2, -webkit-min-content);
-      grid-template-rows: repeat(2, min-content);
-  gap: 5px;
-      grid-template-areas: "got heart hp" "outing title outing";
+.outing .outingSuggestions ul li .restaurantInfo h4 {
+  font-size: 1.7rem;
 }
 
-.title {
-  grid: title;
+.outing .outingSuggestions ul li .restaurantInfo h5 {
+  font-size: 1.5rem;
 }
