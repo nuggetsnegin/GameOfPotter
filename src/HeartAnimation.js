@@ -15,7 +15,8 @@ class HeartAnimation extends Component {
     else return 10
   }
 
-  render () {
+
+  render() {
     const heartBeat = this.props.totalPoints
 
     const heartBeatAnimation = this.heartBeatCalculator(heartBeat);

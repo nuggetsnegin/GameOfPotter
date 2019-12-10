@@ -4,6 +4,7 @@ import GetGotCharacters from "./GetGotCharacters";
 import GetHpCharacters from "./GetHpCharacters";
 import Outing from "./Outing.js";
 import StatsMatch from "./StatsMatch.js";
+import Footer from './Footer.js';
 
 // let filteredRestaurant = {}
 
@@ -20,40 +21,29 @@ class App extends Component {
   }
 
   handleGetReview = (suggestionsArray) => {
-    console.log(suggestionsArray);
-    
     this.setState({
       suggestions: suggestionsArray
     }, () => {
       if (this.state.matchValue) {
-        console.log("helooooo");
         this.passValue();
       }
     })
   }
 
   handleValue = (value) => {
-    console.log(this.state.suggestions)
     this.setState({
       matchValue: value
     }, () => {
-        if (this.state.suggestions.length > 0) {
-       console.log("hiiii");
-       this.passValue();
+      if (this.state.suggestions.length > 0) {
+        this.passValue();
       }
     })
   }
 
-   passValue = () => {
-    console.log(this.state.suggestions);
-    console.log("hello this is passValue!!!");
-
-    // clone the array from state
+  passValue = () => {
     const cloneArray = [...this.state.suggestions];
-
+    
     if (this.state.matchValue <= 40) {
-      console.log("under 40");
-      
       const newArray = cloneArray.filter((restaurant) => {
         return restaurant.review <= 4.2;
       })
@@ -123,17 +113,19 @@ class App extends Component {
   }
 
 
- 
-
   render() {
+    
     return (
       <div className='app'>
-      <header><h1>Game of Potter</h1></header>
+        <header>
+          <h1>Game of Potter</h1>
+        </header>
+          
         <div className='wrapper'>
           <main className='gridContainer'>
             <div className='introduction'>
               <p>
-                Hi there! Have you ever wanted to know which{" "}
+                Hi there! Have you ever wanted to know which{' '}
                 <span>Game of Thrones</span> and <span>Harry Potter </span>
                 characters could be BFFS? No? Well.. too bad!
               </p>
@@ -145,21 +137,15 @@ class App extends Component {
               sendValue={this.handleValue}
             />
             <GetHpCharacters setAppState={value => this.setState(value)} />
-            <Outing
-              getReview={this.handleGetReview}
-              passReview={this.state.filteredRestaurant}
-              
-              // passMatchValue={this.state.matchValue}
-              // sendValue={this.handleValue}
-              // filteredRestaurants={filteredRestaurant}
-            />
           </main>
         </div>
-        <footer>
-          Made with magic & blood by <span>Negin</span>, <span>Sarah</span>,{" "}
-          <span>Nuno</span> & <span>Keil</span> 2019
-        </footer>
+        <Outing
+              getReview={this.handleGetReview}
+              passReview={this.state.filteredRestaurant}
+            />
+        <Footer />
       </div>
+
     );
   }
 }

@@ -1,79 +1,80 @@
-import React, { Component } from "react";
-import axios from "axios";
+import React, { Component } from 'react';
+import axios from 'axios';
 
 let suggestions = [];
+
 class Outing extends Component {
   constructor() {
     super();
     this.state = {
       suggestions: [
         {
-          name: "",
-          review: "",
-          cuisine: "",
-          image: "",
+          name: '',
+          review: '',
+          cuisine: '',
+          image: '',
         },
       ],
-      matchValue: "",
+      matchValue: '',
       filteredRestaurant: {},
     };
   }
 
   componentDidMount() {
-    console.log("go go gadget");
-
     axios({
       url:
-        "https://developers.zomato.com/api/v2.1/search?entity_id=89&entity_type=city",
-      method: "GET",
-      dataResponse: "json",
+        'https://developers.zomato.com/api/v2.1/search?entity_id=89&entity_type=city',
+      method: 'GET',
+      dataResponse: 'json',
       headers: {
-        "user-key": "a43d2ac63efba3212ecc9c702a40317c",
+        'user-key': 'a43d2ac63efba3212ecc9c702a40317c',
       },
     })
-      .then(response => {
-        const restaurants = response.data.restaurants;
+    .then(response => {
+      const restaurants = response.data.restaurants;
 
-        let arrayOfRestaurants = restaurants.map(suggestion => {
-          const restaurantsObject = {
-            name: suggestion.restaurant.name,
-            image: suggestion.restaurant.thumb,
-            cuisine: suggestion.restaurant.cuisines,
-            review: suggestion.restaurant.user_rating.aggregate_rating,
-          };
-          return restaurantsObject;
-        });
-        suggestions = arrayOfRestaurants;
-      })
-      .then(() => {
-        this.props.getReview(suggestions);
+      let arrayOfRestaurants = restaurants.map(suggestion => {
+        const restaurantsObject = {
+          name: suggestion.restaurant.name,
+          image: suggestion.restaurant.thumb,
+          cuisine: suggestion.restaurant.cuisines,
+          review: suggestion.restaurant.user_rating.aggregate_rating,
+        };
+        return restaurantsObject;
       });
+      suggestions = arrayOfRestaurants;
+    })
+    .then(() => {
+      this.props.getReview(suggestions);
+    });
   }
 
-  render() {
 
+  render() {
     return (
       <div className='outing'>
-        <h2 className='title'>Outing Suggestions</h2>
-        <div className='outingSuggestions'>
-          <ul>
-            {this.props.passReview.map(suggestion => {
-              return (
-                <li>
-                  <img
-                    className='restaurantImg'
-                    src={suggestion.image}
-                    alt=''
-                  />
-                  <div className='restaurantInfo'>
-                    <h3>{suggestion.name}</h3>
-                    <h5>Review: {suggestion.review} ⭐️</h5>
-                    <h4>Cuisine: {suggestion.cuisine}</h4>
-                  </div>
-                </li>
-              );
-            })}
-          </ul>
+        <div class='wrapper'>
+          <h2 className='title'>Date Night Suggestions</h2>
+          <div className='outingSuggestions'>
+            <ul>
+              {this.props.passReview.map(suggestion => {
+                return (
+                  <li>
+                    <img
+                      className='restaurantImg'
+                      src={suggestion.image}
+                      alt=''
+                    />
+                    <div className='restaurantInfo'>
+                      <h3>{suggestion.name}</h3>
+                      <h5>Review: {suggestion.review} ⭐️</h5>
+                      <h4>Cuisine: {suggestion.cuisine}</h4>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
         </div>
       </div>
     );

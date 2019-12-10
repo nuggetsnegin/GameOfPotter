@@ -18,7 +18,7 @@ class GetHpCharacters extends Component {
     }
   }
 
-  componentDidMount () {
+  componentDidMount() {
     axios({
       url: `https://hp-api.herokuapp.com/api/characters`,
       method: 'get'
@@ -32,7 +32,7 @@ class GetHpCharacters extends Component {
             house: character.house,
             image: character.image,
             age: character.yearOfBirth,
-            ancestry: character.ancestry,
+            // ancestry: character.ancestry,
           }
           arrayOfCharacters.push(characterObject)
         }
@@ -62,7 +62,9 @@ class GetHpCharacters extends Component {
     appState.randomHpCharacter = randomCharacter
     setAppState(appState)
   }
-  render () {
+
+  
+  render() {
     const { randomHPCharacter } = this.state
 
     return (
