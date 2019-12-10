@@ -281,14 +281,14 @@ ul, li {
 
 .affinity {
   position: absolute;
-  top: 35%;
-  left: 45.5%;
+  top: 40%;
+  left: 46%;
   color: #e4e4df;
 }
 
 .affinity h2 {
-  font-size: 7rem;
-  -webkit-text-stroke-width: 2px;
+  font-size: 9rem;
+  -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
   border: none;
 }
@@ -316,11 +316,24 @@ ul, li {
   border: 15px solid #d0a360;
 }
 
+.introduction {
+  text-align: center;
+  width: 50%;
+  margin: 0 auto;
+  font-size: 2rem;
+}
+
+.introduction span {
+  font-weight: 900;
+}
+
 button {
   margin-top: 2%;
   border: none;
   color: #e4e4df;
   background-color: #171c20;
+  -webkit-box-shadow: 4px 4px #d0a360;
+          box-shadow: 4px 4px #d0a360;
   padding: 20px 15px;
   font-size: 2rem;
   border-radius: 25px;
@@ -329,13 +342,13 @@ button {
 button:hover {
   color: #171c20;
   background-color: #d0a360;
-  border: 2px dashed #171c20;
+  -webkit-box-shadow: 2px 2px #171c20;
+          box-shadow: 2px 2px #171c20;
 }
 
 button:focus {
-  color: #171c20;
-  background-color: #e4e4df;
-  border: 2px dashed #171c20;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 .heartbeat {
