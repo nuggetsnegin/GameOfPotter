@@ -225,9 +225,11 @@ p {
 .wrapper {
   max-width: 1600px;
   margin: 0 auto;
+  height: 97vh;
 }
 
-ul, li {
+ul,
+li {
   list-style: none;
 }
 
@@ -349,6 +351,19 @@ button:hover {
 button:focus {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
+}
+
+footer {
+  background-color: #171c20;
+  color: #e4e4df;
+  text-align: center;
+  padding: 10px;
+  height: 4vh;
+  font-size: 1.5rem;
+}
+
+footer span {
+  color: #d0a360;
 }
 
 .heartbeat {

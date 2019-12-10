@@ -2,160 +2,173 @@
 $dark-color: #171c20;
 $accent-color: #d0a360;
 $light-color: #e4e4df;
-$body-font: 'Poppins', sans-serif;
-$heading-font: 'Libre Caslon Display', serif;
+$body-font: "Poppins", sans-serif;
+$heading-font: "Libre Caslon Display", serif;
 
 /*FONT*/
-@import url('https://fonts.googleapis.com/css?family=Libre+Caslon+Display|Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Libre+Caslon+Display|Poppins&display=swap");
 
-html{
-    font-size: 62.5%;
+html {
+  font-size: 62.5%;
 }
 
-h1{
-    font-size: 10rem;
-    text-align: center;
-    font-family: $heading-font;
-    color: $dark-color;
-    margin: 0;
-    letter-spacing: -5px;
-    text-shadow: 3px 3px $accent-color;
+h1 {
+  font-size: 10rem;
+  text-align: center;
+  font-family: $heading-font;
+  color: $dark-color;
+  margin: 0;
+  letter-spacing: -5px;
+  text-shadow: 3px 3px $accent-color;
 }
 
-h2{
-    font-size: 5rem;
-    border-bottom: 5px solid $accent-color;
-    margin: 0;
-    font-family: $heading-font;
+h2 {
+  font-size: 5rem;
+  border-bottom: 5px solid $accent-color;
+  margin: 0;
+  font-family: $heading-font;
 }
 
-h3{
-    font-size: 4rem;
-    margin: 0;
-    font-family: $heading-font;
+h3 {
+  font-size: 4rem;
+  margin: 0;
+  font-family: $heading-font;
 }
 
-body{
-    background-color: $light-color;
-    font-family: $body-font;
+body {
+  background-color: $light-color;
+  font-family: $body-font;
 }
 
-p{
-    font-size: 3rem;
-    color: $dark-color;
-    padding: 10px;
-    margin: 0;
-    margin-bottom: 5px;
+p {
+  font-size: 3rem;
+  color: $dark-color;
+  padding: 10px;
+  margin: 0;
+  margin-bottom: 5px;
 }
 
-.wrapper{
-    max-width: 1600px;
-    margin: 0 auto;
+.wrapper {
+  max-width: 1600px;
+  margin: 0 auto;
+  height: 97vh;
 }
 
-ul, li {
-    list-style: none;
+ul,
+li {
+  list-style: none;
 }
 
-.gridContainer{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, min-content);
-    gap: 5px;
-    grid-template-areas:
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, min-content);
+  gap: 5px;
+  grid-template-areas:
     "got heart hp"
     "message message message";
 }
 
-.gotCharacters{
-    grid-area: got;
-    margin: 0 auto;
-    text-align: center;
+.gotCharacters {
+  grid-area: got;
+  margin: 0 auto;
+  text-align: center;
 }
 
-.message{
-    grid-area: message;
+.message {
+  grid-area: message;
 }
 
-.heartIcon{
-    grid-area: heart;
+.heartIcon {
+  grid-area: heart;
 }
 
-.hpCharacters{
-      grid-area: hp;
-      margin: 0 auto;
-      text-align: center;
+.hpCharacters {
+  grid-area: hp;
+  margin: 0 auto;
+  text-align: center;
 }
 
-.heartIcon{
-    grid: heart;
-    position: relative;
-    width: 500px;
-    height: 500px;
+.heartIcon {
+  grid: heart;
+  position: relative;
+  width: 500px;
+  height: 500px;
 }
 
-.affinity{
-    position: absolute;
-    top: 40%;
-    left: 46%;
-    color: $light-color;
-    h2{
-        font-size: 9rem;
-        -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: black;
-        border: none;
-    }
+.affinity {
+  position: absolute;
+  top: 40%;
+  left: 46%;
+  color: $light-color;
+  h2 {
+    font-size: 9rem;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    border: none;
+  }
 }
 
-
-.individualGotCharacter{
-    grid-area: got;
+.individualGotCharacter {
+  grid-area: got;
 }
 
 // .outing{
 //     grid-area: outing;
 // }
 
-.message{
-    text-align: center;
-    border-bottom: 5px solid $accent-color;
-    grid-area: message;
+.message {
+  text-align: center;
+  border-bottom: 5px solid $accent-color;
+  grid-area: message;
 }
 
 .gotImages,
-.hpImages{
-    width: 400px;
-    height: 400px;
-    border-radius: 50%;
-    border: 15px solid $accent-color;
+.hpImages {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  border: 15px solid $accent-color;
 }
 
-.introduction{
-    text-align: center;
-    width: 50%;
-    margin: 0 auto;
-    font-size: 2rem;
+.introduction {
+  text-align: center;
+  width: 50%;
+  margin: 0 auto;
+  font-size: 2rem;
 
-    span{
-        font-weight: 900;
-    }
+  span {
+    font-weight: 900;
+  }
 }
 
-button{
-    margin-top: 2%;
-    border: none;
-    color: $light-color;
-    background-color: $dark-color;
-    box-shadow: 4px 4px $accent-color;
-    padding: 20px 15px;
-    font-size: 2rem;
-    border-radius: 25px;
-    &:hover{
-        color: $dark-color;
-        background-color: $accent-color;
-        box-shadow: 2px 2px $dark-color;
-    }
-    &:focus{
-        transform: scale(1.2);
-    }
+button {
+  margin-top: 2%;
+  border: none;
+  color: $light-color;
+  background-color: $dark-color;
+  box-shadow: 4px 4px $accent-color;
+  padding: 20px 15px;
+  font-size: 2rem;
+  border-radius: 25px;
+  &:hover {
+    color: $dark-color;
+    background-color: $accent-color;
+    box-shadow: 2px 2px $dark-color;
+  }
+  &:focus {
+    transform: scale(1.2);
+  }
+}
+
+footer {
+  background-color: $dark-color;
+  color: $light-color;
+  text-align: center;
+  padding: 10px;
+  height: 4vh;
+  font-size: 1.5rem;
+  span {
+    color: $accent-color;
+  }
 }

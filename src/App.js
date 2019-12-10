@@ -10,13 +10,16 @@ class App extends Component {
     super()
     this.state = {
       randomGotCharacter: {},
-      randomHpCharacter: {}
+      randomHpCharacter: {},
     }
   }
+
+
 
   render () {
     console.log(this.state)
     return (
+      <div className='app'>
       <div className='wrapper'>
         <h1>Game of Potter</h1>
         <p className='introduction'>
@@ -32,6 +35,8 @@ class App extends Component {
           <GetHpCharacters setAppState={value => this.setState(value)} />
           {/* <Outing /> */}
         </div>
+      </div>
+      <footer>Made with magic & blood by <span>Negin</span>, <span>Sarah</span>, <span>Nuno</span> & <span>Keil</span> 2019</footer>
       </div>
     )
   }
