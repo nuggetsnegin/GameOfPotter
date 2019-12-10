@@ -19,22 +19,6 @@ class Outing extends Component {
     };
   }
 
-  constructor() {
-    super();
-    this.state = {
-      suggestions: [
-        {
-          name: "",
-          review: "",
-          cuisine: "",
-          image: "",
-        },
-      ],
-      matchValue: "",
-      filteredRestaurant: {},
-    };
-  }
-
   componentDidMount() {
     console.log("go go gadget");
 
