@@ -97,8 +97,8 @@ class App extends Component {
   render() {
     return (
       <div className='app'>
+      <header><h1>Game of Potter</h1></header>
         <div className='wrapper'>
-          <header><h1>Game of Potter</h1></header>
           <main className='gridContainer'>
             <div className='introduction'>
               <p>

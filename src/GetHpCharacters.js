@@ -20,7 +20,7 @@ class GetHpCharacters extends Component {
 
   componentDidMount () {
     axios({
-      url: `http://hp-api.herokuapp.com/api/characters`,
+      url: `https://hp-api.herokuapp.com/api/characters`,
       method: 'get'
     }).then(data => {
       let arrayOfCharacters = []
@@ -67,7 +67,7 @@ class GetHpCharacters extends Component {
 
     return (
       <div className='hpCharacters'>
-        <div className='individualGotCharacter'>
+        <div className='individualHpCharacter'>
           <h2>{randomHPCharacter.name}</h2>
           <p>
             {randomHPCharacter.house}
