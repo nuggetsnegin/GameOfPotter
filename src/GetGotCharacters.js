@@ -18,13 +18,13 @@ class GetGotCharacters extends Component {
         'House Stark',
         'House Lannister',
         'House Tyrell',
-        'House Greyjoy'
+        'House Greyjoy',
       ],
       randomGotCharacter: {} /* holding random character */
     }
   }
 
-  componentDidMount () {
+  componentDidMount() {
     Promise.all([
       axios.get(
         `https://api.got.show/api/book/characters/byHouse/${
@@ -58,7 +58,7 @@ class GetGotCharacters extends Component {
             const characterObject = {
               name: character.name,
               house: character.house,
-              alive: character.alive,
+              // alive: character.alive,
               age: character.birth,
               image: character.image
             }
@@ -66,7 +66,6 @@ class GetGotCharacters extends Component {
           }
         })
       })
-
       this.setState({
         gotCharacters: arrayOfCharacters /* setting state of array of characters from api call */
       })
@@ -95,7 +94,7 @@ class GetGotCharacters extends Component {
   }
 
 
-  render () {
+  render() {
     const { randomGotCharacter } = this.state
 
     return (
