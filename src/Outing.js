@@ -49,6 +49,7 @@ class Outing extends Component {
             this.props.getReview(suggestions);
         });
     }
+    
 
     // console.log(restaurant.review)
                             // if (this.props.passMatchValue <= '40%') {
@@ -76,18 +77,7 @@ class Outing extends Component {
                 <h2 className="title">Outing Suggestions</h2>
                 <div className='outingSuggestions'>
                     <ul>
-                    {/* {this.props.sendFilteredRestaurant !== []
-
-                    ?
-                    this.props.sendFilteredRestaurant.map((restaurant) => {
-                        return(
-                            <li>{restaurant}</li>
-                        )
-                    })
-                    :
-                    <p>Nothing</p>
-                    } */}
-                        {/* {this.state.suggestions.map(suggestion => {
+                        {this.props.passReview.map(suggestion => {
                             return (
                                 <li>
                                     <img className='restaurantImg' src={suggestion.image} alt=""/>
@@ -98,21 +88,7 @@ class Outing extends Component {
                                     </div>
                                 </li>
                             );
-                        })} */}
-                        {/* {this.props.passReview.filter((restaurant) => {
-                            console.log(restaurant);
-                            console.log(this.props.matchValue);
-                            return(
-                                restaurant
-                            )   
-                        })
-                        .map(() => {
-                            return(
-                                <li></li>
-                            )
-                        })
-
-                        } */}
+                        })}
                     </ul>
                 </div>
             </div>
