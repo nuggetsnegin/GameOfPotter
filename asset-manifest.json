@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/GameOfPotter/static/css/main.0107a22b.chunk.css",
-    "main.js": "/GameOfPotter/static/js/main.23e1ba69.chunk.js",
-    "main.js.map": "/GameOfPotter/static/js/main.23e1ba69.chunk.js.map",
+    "main.css": "/GameOfPotter/static/css/main.6ea6261f.chunk.css",
+    "main.js": "/GameOfPotter/static/js/main.053d1959.chunk.js",
+    "main.js.map": "/GameOfPotter/static/js/main.053d1959.chunk.js.map",
     "runtime-main.js": "/GameOfPotter/static/js/runtime-main.ba95b4d8.js",
     "runtime-main.js.map": "/GameOfPotter/static/js/runtime-main.ba95b4d8.js.map",
-    "static/js/2.695465c8.chunk.js": "/GameOfPotter/static/js/2.695465c8.chunk.js",
-    "static/js/2.695465c8.chunk.js.map": "/GameOfPotter/static/js/2.695465c8.chunk.js.map",
+    "static/js/2.70ceb61f.chunk.js": "/GameOfPotter/static/js/2.70ceb61f.chunk.js",
+    "static/js/2.70ceb61f.chunk.js.map": "/GameOfPotter/static/js/2.70ceb61f.chunk.js.map",
     "index.html": "/GameOfPotter/index.html",
-    "precache-manifest.70f3755c77221373cb2f593ca93ba921.js": "/GameOfPotter/precache-manifest.70f3755c77221373cb2f593ca93ba921.js",
+    "precache-manifest.55e1a600313fddb82bbd802d4d2b1432.js": "/GameOfPotter/precache-manifest.55e1a600313fddb82bbd802d4d2b1432.js",
     "service-worker.js": "/GameOfPotter/service-worker.js",
-    "static/css/main.0107a22b.chunk.css.map": "/GameOfPotter/static/css/main.0107a22b.chunk.css.map",
+    "static/css/main.6ea6261f.chunk.css.map": "/GameOfPotter/static/css/main.6ea6261f.chunk.css.map",
     "static/media/App.css": "/GameOfPotter/static/media/backgroundPattern.f9500e7a.jpg",
     "static/media/cameraPlaceholder.jpg": "/GameOfPotter/static/media/cameraPlaceholder.b48d69c3.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.ba95b4d8.js",
-    "static/js/2.695465c8.chunk.js",
-    "static/css/main.0107a22b.chunk.css",
-    "static/js/main.23e1ba69.chunk.js"
+    "static/js/2.70ceb61f.chunk.js",
+    "static/css/main.6ea6261f.chunk.css",
+    "static/js/main.053d1959.chunk.js"
   ]
 }
