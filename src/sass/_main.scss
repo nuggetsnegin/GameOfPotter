@@ -8,22 +8,32 @@ $heading-font: "Libre Caslon Display", serif;
 /*FONT*/
 @import url("https://fonts.googleapis.com/css?family=Libre+Caslon+Display|Poppins&display=swap");
 
+
+/*MAIN STYLING*/
 html {
   font-size: 62.5%;
+}
+
+header{
+  min-height: 15vh;
+}
+
+main{
+  min-height: 80vh;
 }
 
 h1 {
   font-size: 10rem;
   text-align: center;
   font-family: $heading-font;
-  color: $dark-color;
+  color: $accent-color;
   margin: 0;
-  letter-spacing: -5px;
-  text-shadow: 3px 3px $accent-color;
+  letter-spacing: -3px;
+  text-shadow: 2px 2px rgb(110, 27, 27);
 }
 
 h2 {
-  font-size: 5rem;
+  font-size: 4rem;
   border-bottom: 5px solid $accent-color;
   margin: 0;
   font-family: $heading-font;
@@ -37,10 +47,11 @@ h3 {
 
 body {
   font-family: $body-font;
+  background-color: $dark-color;
 }
 
 p {
-  font-size: 3rem;
+  font-size: 2.3rem;
   color: $dark-color;
   padding: 10px;
   margin: 0;
@@ -57,12 +68,34 @@ li {
   list-style: none;
 }
 
+button {
+  border: none;
+  color: $light-color;
+  background-color: $dark-color;
+  box-shadow: 4px 4px $accent-color;
+  padding: 20px 15px;
+  font-size: 2rem;
+  border-radius: 25px;
+  &:hover {
+    color: $dark-color;
+    background-color: $accent-color;
+    box-shadow: 2px 2px $dark-color;
+  }
+  &:focus {
+    transform: scale(1.1);
+  }
+}
+
+/*MAIN SECTION - GRID SETUP*/
 .gridContainer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, min-content);
   gap: 5px;
-  background-image: url(../assets/backgroundImage.jpg);
+  background-image: url(../assets/backgroundPattern.jpg);
+  background-size: contain;
+  opacity: 0.8;
+  background-attachment: fixed;
   grid-template-areas:
     "introduction introduction introduction"
     "got heart hp"
@@ -75,60 +108,55 @@ li {
   text-align: center;
 }
 
-.message {
-  grid-area: message;
-}
-
-.heartIcon {
-  grid-area: heart;
-}
-
 .hpCharacters {
   grid-area: hp;
   margin: 0 auto;
   text-align: center;
 }
 
-.heartIcon {
-  grid-area: heart;
-  position: relative;
-  width: 500px;
-  height: 500px;
+.gotImages,
+.hpImages {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  border: 15px solid $accent-color;
 }
 
-.affinity {
-  position: absolute;
-  top: 50%;
-  left: 46%;
-  color: $light-color;
-  h2 {
-    font-size: 9rem;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
-    border: none;
+/*HEART SECTION*/
+
+.affinyWrapper {
+  grid-area: heart;
+}
+
+.heartIcon {
+  width: 80%;
+  height: 80%;
+  margin: 0 auto;
+}
+
+.heartWrapper{
+  position: relative;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  h2{
+    z-index: 2;
+    position: absolute;
+    top: 37%;
+    left: 38%;
+    border-bottom: none;
+    font-size: 7rem;
+    color: $light-color;
+    text-shadow: 3px 3px $dark-color;
   }
 }
 
-.individualGotCharacter {
-  grid-area: got;
-}
-
-// .outing{
-//     grid-area: outing;
-// }
-
 .message {
-  text-align: center;
-  border-bottom: 5px solid $accent-color;
   grid-area: message;
-}
-
-.gotImages,
-.hpImages {
-  width: 400px;
-  height: 400px;
-  border-radius: 50%;
-  border: 15px solid $accent-color;
+  text-align: center;
+  h3{
+    font-size: 3.5rem;
+  }
 }
 
 .introduction {
@@ -137,29 +165,8 @@ li {
   width: 50%;
   margin: 0 auto;
   font-size: 2rem;
-
   span {
     font-weight: 900;
-  }
-}
-
-button {
-  margin-top: 2%;
-  border: none;
-  color: $light-color;
-  background-color: $dark-color;
-  box-shadow: 4px 4px $accent-color;
-  padding: 20px 15px;
-  font-size: 2rem;
-  border-radius: 25px;
-  margin-bottom: 1%;
-  &:hover {
-    color: $dark-color;
-    background-color: $accent-color;
-    box-shadow: 2px 2px $dark-color;
-  }
-  &:focus {
-    transform: scale(1.2);
   }
 }
 
@@ -167,8 +174,7 @@ footer {
   background-color: $dark-color;
   color: $light-color;
   text-align: center;
-  padding: 10px;
-  height: 4vh;
+  min-height: 4vh;
   font-size: 1.5rem;
   span {
     color: $accent-color;
