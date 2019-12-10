@@ -210,9 +210,7 @@ h3 {
 }
 
 body {
-  background-color: #e4e4df;
   font-family: "Poppins", sans-serif;
-  height: 97vh;
 }
 
 p {
@@ -238,15 +236,16 @@ li {
   display: grid;
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
-  -ms-grid-rows: (min-content)[2];
-      grid-template-rows: repeat(2, -webkit-min-content);
-      grid-template-rows: repeat(2, min-content);
+  -ms-grid-rows: (min-content)[3];
+      grid-template-rows: repeat(3, -webkit-min-content);
+      grid-template-rows: repeat(3, min-content);
   gap: 5px;
-      grid-template-areas: "got heart hp" "message message message";
+  background-image: url(../assets/backgroundImage.jpg);
+      grid-template-areas: "introduction introduction introduction" "got heart hp" "message message message";
 }
 
 .gotCharacters {
-  -ms-grid-row: 1;
+  -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: got;
   margin: 0 auto;
@@ -254,20 +253,20 @@ li {
 }
 
 .message {
-  -ms-grid-row: 2;
+  -ms-grid-row: 3;
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-area: message;
 }
 
 .heartIcon {
-  -ms-grid-row: 1;
+  -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: heart;
 }
 
 .hpCharacters {
-  -ms-grid-row: 1;
+  -ms-grid-row: 2;
   -ms-grid-column: 3;
   grid-area: hp;
   margin: 0 auto;
@@ -275,7 +274,9 @@ li {
 }
 
 .heartIcon {
-  grid: heart;
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: heart;
   position: relative;
   width: 500px;
   height: 500px;
@@ -296,7 +297,7 @@ li {
 }
 
 .individualGotCharacter {
-  -ms-grid-row: 1;
+  -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: got;
 }
@@ -304,7 +305,7 @@ li {
 .message {
   text-align: center;
   border-bottom: 5px solid #d0a360;
-  -ms-grid-row: 2;
+  -ms-grid-row: 3;
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-area: message;
@@ -319,6 +320,10 @@ li {
 }
 
 .introduction {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: introduction;
   text-align: center;
   width: 50%;
   margin: 0 auto;

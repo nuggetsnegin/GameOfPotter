@@ -19,12 +19,12 @@ class App extends Component {
       <div className='app'>
         <div className='wrapper'>
           <h1>Game of Potter</h1>
-          <p className='introduction'>
+          <div className='gridContainer'>
+          <div className='introduction'><p>
             Hi there! Have you ever wanted to know which{' '}
             <span>Game of Thrones</span> and <span>Harry Potter </span>
-            characters could be BFFS? No? Well.. too bad!
-          </p>
-          <div className='gridContainer'>
+            characters could be BFFS? No? Well.. too bad!</p>
+          </div>
             <GetGotCharacters setAppState={value => this.setState(value)} />
             <StatsMatch
               got={this.state.randomGotCharacter}

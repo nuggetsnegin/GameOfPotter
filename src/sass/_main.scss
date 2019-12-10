@@ -36,9 +36,7 @@ h3 {
 }
 
 body {
-  background-color: $light-color;
   font-family: $body-font;
-  height: 97vh;
 }
 
 p {
@@ -62,9 +60,11 @@ li {
 .gridContainer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, min-content);
+  grid-template-rows: repeat(3, min-content);
   gap: 5px;
+  background-image: url(../assets/backgroundImage.jpg);
   grid-template-areas:
+    "introduction introduction introduction"
     "got heart hp"
     "message message message";
 }
@@ -90,7 +90,7 @@ li {
 }
 
 .heartIcon {
-  grid: heart;
+  grid-area: heart;
   position: relative;
   width: 500px;
   height: 500px;
@@ -132,6 +132,7 @@ li {
 }
 
 .introduction {
+  grid-area: introduction;
   text-align: center;
   width: 50%;
   margin: 0 auto;
