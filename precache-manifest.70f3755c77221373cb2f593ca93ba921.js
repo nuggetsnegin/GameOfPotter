@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d3d3e53baeff1703c5cda443552757ed",
+    "revision": "68e93ee82cc75d437922a152b7ddecb6",
     "url": "/GameOfPotter/index.html"
   },
   {
-    "revision": "0f47f40b5b88be66b385",
+    "revision": "f594e465d985a6bef566",
     "url": "/GameOfPotter/static/css/main.0107a22b.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/GameOfPotter/static/js/2.695465c8.chunk.js"
   },
   {
-    "revision": "0f47f40b5b88be66b385",
-    "url": "/GameOfPotter/static/js/main.63871786.chunk.js"
+    "revision": "f594e465d985a6bef566",
+    "url": "/GameOfPotter/static/js/main.23e1ba69.chunk.js"
   },
   {
     "revision": "dd8e1a54d3b079567c10",

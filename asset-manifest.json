@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/GameOfPotter/static/css/main.0107a22b.chunk.css",
-    "main.js": "/GameOfPotter/static/js/main.63871786.chunk.js",
-    "main.js.map": "/GameOfPotter/static/js/main.63871786.chunk.js.map",
+    "main.js": "/GameOfPotter/static/js/main.23e1ba69.chunk.js",
+    "main.js.map": "/GameOfPotter/static/js/main.23e1ba69.chunk.js.map",
     "runtime-main.js": "/GameOfPotter/static/js/runtime-main.ba95b4d8.js",
     "runtime-main.js.map": "/GameOfPotter/static/js/runtime-main.ba95b4d8.js.map",
     "static/js/2.695465c8.chunk.js": "/GameOfPotter/static/js/2.695465c8.chunk.js",
     "static/js/2.695465c8.chunk.js.map": "/GameOfPotter/static/js/2.695465c8.chunk.js.map",
     "index.html": "/GameOfPotter/index.html",
-    "precache-manifest.25ef11f6a33f4fdbbb67960a4b8a90dc.js": "/GameOfPotter/precache-manifest.25ef11f6a33f4fdbbb67960a4b8a90dc.js",
+    "precache-manifest.70f3755c77221373cb2f593ca93ba921.js": "/GameOfPotter/precache-manifest.70f3755c77221373cb2f593ca93ba921.js",
     "service-worker.js": "/GameOfPotter/service-worker.js",
     "static/css/main.0107a22b.chunk.css.map": "/GameOfPotter/static/css/main.0107a22b.chunk.css.map",
     "static/media/App.css": "/GameOfPotter/static/media/backgroundPattern.f9500e7a.jpg",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.ba95b4d8.js",
     "static/js/2.695465c8.chunk.js",
     "static/css/main.0107a22b.chunk.css",
-    "static/js/main.63871786.chunk.js"
+    "static/js/main.23e1ba69.chunk.js"
   ]
 }
