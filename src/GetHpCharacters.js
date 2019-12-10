@@ -14,7 +14,7 @@ class GetHpCharacters extends Component {
           image: ''
         }
       ],
-      randomHPCharacter: {}
+      randomHPCharacter: {} /*holding random character*/
     }
   }
 
@@ -31,7 +31,8 @@ class GetHpCharacters extends Component {
             name: character.name,
             house: character.house,
             image: character.image,
-            age: character.yearOfBirth
+            age: character.yearOfBirth,
+            ancestry: character.ancestry,
           }
           arrayOfCharacters.push(characterObject)
         }
@@ -67,11 +68,11 @@ class GetHpCharacters extends Component {
     return (
       <div className='hpCharacters'>
         <div className='individualGotCharacter'>
-          <h3>{randomHPCharacter.name}</h3>
+          <h2>{randomHPCharacter.name}</h2>
           <p>
-            {randomHPCharacter.house}, {randomHPCharacter.age}
+            {randomHPCharacter.house}
           </p>
-          <img className='gotImages' src={randomHPCharacter.image} alt='' />
+          <img className='hpImages' src={randomHPCharacter.image} alt={`Photo of ${randomHPCharacter.name}`} />
           <button
             className='randomizeCharacter'
             onClick={this.getRandomCharacter}

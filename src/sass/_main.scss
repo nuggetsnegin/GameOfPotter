@@ -2,100 +2,181 @@
 $dark-color: #171c20;
 $accent-color: #d0a360;
 $light-color: #e4e4df;
-$body-font: 'Poppins', sans-serif;
-$heading-font: 'Libre Caslon Display', serif;
+$body-font: "Poppins", sans-serif;
+$heading-font: "Libre Caslon Display", serif;
 
 /*FONT*/
-@import url('https://fonts.googleapis.com/css?family=Libre+Caslon+Display|Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Libre+Caslon+Display|Poppins&display=swap");
 
-html{
-    font-size: 62.5%;
+
+/*MAIN STYLING*/
+html {
+  font-size: 62.5%;
 }
 
-h1{
-    font-size: 10rem;
-    text-align: center;
-    font-family: $heading-font;
+header{
+  min-height: 15vh;
+}
+
+main{
+  min-height: 80vh;
+}
+
+h1 {
+  font-size: 10rem;
+  text-align: center;
+  font-family: $heading-font;
+  color: $accent-color;
+  margin: 0;
+  letter-spacing: -3px;
+  text-shadow: 2px 2px rgb(110, 27, 27);
+}
+
+h2 {
+  font-size: 4rem;
+  border-bottom: 5px solid $accent-color;
+  margin: 0;
+  font-family: $heading-font;
+}
+
+h3 {
+  font-size: 4rem;
+  margin: 0;
+  font-family: $heading-font;
+}
+
+body {
+  font-family: $body-font;
+  background-color: $dark-color;
+}
+
+p {
+  font-size: 2.3rem;
+  color: $dark-color;
+  padding: 10px;
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+.wrapper {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+button {
+  border: none;
+  color: $light-color;
+  background-color: $dark-color;
+  box-shadow: 4px 4px $accent-color;
+  padding: 20px 15px;
+  font-size: 2rem;
+  border-radius: 25px;
+  &:hover {
     color: $dark-color;
-    margin: 0;
-}
-
-h3{
-    font-size: 5rem;
-    font-family: $heading-font;
-}
-
-.hpCharacters,
-.gotCharacters{
     background-color: $accent-color;
+    box-shadow: 2px 2px $dark-color;
+  }
+  &:focus {
+    transform: scale(1.1);
+  }
 }
 
-body{
-    background-color: $light-color;
-    font-family: $body-font;
-}
-
-p{
-    font-size: 2rem;
-}
-
-.wrapper{
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-img {
-    width: 50%;
-    height: 50%;
-}
-
-.imageContainer {
-    width: 200px;
-}
-
-ul, li {
-    list-style: none;
-}
-
-.gridContainer{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, min-content);
-    gap: 5px;
-    grid-template-areas:
+/*MAIN SECTION - GRID SETUP*/
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, min-content);
+  gap: 5px;
+  background-image: url(../assets/backgroundPattern.jpg);
+  background-size: contain;
+  opacity: 0.8;
+  background-attachment: fixed;
+  grid-template-areas:
+    "introduction introduction introduction"
     "got heart hp"
-    "outing outing outing";
+    "message message message";
 }
 
-.gotCharacters{
-    grid: got;
+.gotCharacters {
+  grid-area: got;
+  margin: 0 auto;
+  text-align: center;
 }
 
-
-.hpCharacters{
-      grid: hp;
+.hpCharacters {
+  grid-area: hp;
+  margin: 0 auto;
+  text-align: center;
 }
 
-.heartIcon{
-    grid: heart;
-    position: relative;
-    width: 500px;
-    height: 500px;
+.gotImages,
+.hpImages {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  border: 15px solid $accent-color;
 }
 
-.affinity{
+/*HEART SECTION*/
+
+.affinyWrapper {
+  grid-area: heart;
+}
+
+.heartIcon {
+  width: 80%;
+  height: 80%;
+  margin: 0 auto;
+}
+
+.heartWrapper{
+  position: relative;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  h2{
+    z-index: 2;
     position: absolute;
-    top: 35%;
-    left: 48%;
-    font-size: 4rem;
+    top: 37%;
+    left: 38%;
+    border-bottom: none;
+    font-size: 7rem;
     color: $light-color;
+    text-shadow: 3px 3px $dark-color;
+  }
 }
 
-
-.individualGotCharacter{
-    grid: got;
+.message {
+  grid-area: message;
+  text-align: center;
+  h3{
+    font-size: 3.5rem;
+  }
 }
 
-.outing{
-    grid: outing;
+.introduction {
+  grid-area: introduction;
+  text-align: center;
+  width: 50%;
+  margin: 0 auto;
+  font-size: 2rem;
+  span {
+    font-weight: 900;
+  }
+}
+
+footer {
+  background-color: $dark-color;
+  color: $light-color;
+  text-align: center;
+  min-height: 4vh;
+  font-size: 1.5rem;
+  span {
+    color: $accent-color;
+  }
 }

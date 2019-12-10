@@ -67,7 +67,7 @@ class Outing extends Component {
         // this.getFilteredRestaurantFromProps()
         return(
             <div className='outing'>
-                <h2>Outing Suggestions</h2>
+                <h2 className="title">Outing Suggestions</h2>
                 <div className='outingSuggestions'>
                     <ul>
                     {/* {this.props.sendFilteredRestaurant !== []
@@ -84,10 +84,12 @@ class Outing extends Component {
                         {/* {this.state.suggestions.map(suggestion => {
                             return (
                                 <li>
-                                    <h3>{suggestion.name}</h3>
-                                    <h4>{suggestion.review}</h4>
-                                    <h3>{suggestion.cuisine}</h3>
-                                    <img src={suggestion.image} alt=""/>
+                                    <img className='restaurantImg' src={suggestion.image} alt=""/>
+                                    <div className="restaurantInfo">
+                                        <h3>{suggestion.name}</h3>
+                                        <h5>Review:  {suggestion.review} ⭐️</h5>
+                                        <h4>Cuisine: {suggestion.cuisine}</h4>
+                                    </div>
                                 </li>
                             );
                         })} */}

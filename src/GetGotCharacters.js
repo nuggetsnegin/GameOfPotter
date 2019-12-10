@@ -101,11 +101,11 @@ class GetGotCharacters extends Component {
     return (
       <div className='gotCharacters'>
         <div className='individualGotCharacter'>
-          <h3>{randomGotCharacter.name}</h3>
+          <h2>{randomGotCharacter.name}</h2>
           <p>
-            {randomGotCharacter.house}, {randomGotCharacter.age}
+            {randomGotCharacter.house}
           </p>
-          <img className='gotImages' src={randomGotCharacter.image} alt='' />
+          <img className='gotImages' src={randomGotCharacter.image} alt={`Illustration of ${randomGotCharacter.name}`}/>
           <button
             className='randomizeCharacter'
             onClick={this.getRandomCharacter}
