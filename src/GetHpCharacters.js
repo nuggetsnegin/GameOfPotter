@@ -20,7 +20,7 @@ class GetHpCharacters extends Component {
 
   componentDidMount () {
     axios({
-      url: `http://hp-api.herokuapp.com/api/characters`,
+      url: `https://hp-api.herokuapp.com/api/characters`,
       method: 'get'
     }).then(data => {
       let arrayOfCharacters = []

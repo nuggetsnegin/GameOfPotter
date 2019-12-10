@@ -204,6 +204,7 @@ html {
 
 header {
   min-height: 15vh;
+  background-color: #171c20;
 }
 
 main {
@@ -221,7 +222,7 @@ h1 {
 }
 
 h2 {
-  font-size: 4rem;
+  font-size: 3.2rem;
   border-bottom: 5px solid #d0a360;
   margin: 0;
   font-family: "Libre Caslon Display", serif;
@@ -247,7 +248,7 @@ p {
 }
 
 .wrapper {
-  max-width: 1600px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -289,11 +290,13 @@ button:focus {
       grid-template-rows: repeat(3, -webkit-min-content);
       grid-template-rows: repeat(3, min-content);
   gap: 5px;
+      grid-template-areas: "introduction introduction introduction" "got heart hp" "message message message";
+}
+
+.app {
   background-image: url(../assets/backgroundPattern.jpg);
   background-size: contain;
-  opacity: 0.8;
   background-attachment: fixed;
-      grid-template-areas: "introduction introduction introduction" "got heart hp" "message message message";
 }
 
 .gotCharacters {
@@ -328,8 +331,8 @@ button:focus {
 }
 
 .heartIcon {
-  width: 80%;
-  height: 80%;
+  width: 400px;
+  height: 400px;
   margin: 0 auto;
 }
 
@@ -340,19 +343,14 @@ button:focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
 }
 
 .heartWrapper h2 {
-  z-index: 2;
   position: absolute;
   top: 37%;
-  left: 38%;
+  left: 39%;
   border-bottom: none;
-  font-size: 7rem;
+  font-size: 5rem;
   color: #e4e4df;
   text-shadow: 3px 3px #171c20;
 }
