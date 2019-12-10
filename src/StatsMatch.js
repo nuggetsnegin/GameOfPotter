@@ -56,6 +56,8 @@ const StatsMatch = props => {
     return null;
   }
   const value = combineStats(props.hp, props.got);
+  props.sendValue(value);
+
   return (
     <div className='affinityWrapper'>
       <div className='heartWrapper'>
