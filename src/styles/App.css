@@ -413,7 +413,7 @@ footer span {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border-top: 3px solid #d0a360;
+  border-top: 2px solid #d0a360;
 }
 
 .outing .title {
