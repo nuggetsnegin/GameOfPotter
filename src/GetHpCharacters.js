@@ -72,7 +72,7 @@ class GetHpCharacters extends Component {
           <p>
             {randomHPCharacter.house}
           </p>
-          <img className='hpImages' src={randomHPCharacter.image} alt={`Image of ${randomHPCharacter.name}`} />
+          <img className='hpImages' src={randomHPCharacter.image} alt={`Photo of ${randomHPCharacter.name}`} />
           <button
             className='randomizeCharacter'
             onClick={this.getRandomCharacter}

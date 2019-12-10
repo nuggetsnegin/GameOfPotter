@@ -192,10 +192,13 @@ h1 {
   font-family: "Libre Caslon Display", serif;
   color: #171c20;
   margin: 0;
+  letter-spacing: -5px;
+  text-shadow: 3px 3px #d0a360;
 }
 
 h2 {
   font-size: 5rem;
+  border-bottom: 5px solid #d0a360;
   margin: 0;
   font-family: "Libre Caslon Display", serif;
 }
@@ -213,8 +216,7 @@ body {
 
 p {
   font-size: 3rem;
-  background-color: #171c20;
-  color: #e4e4df;
+  color: #171c20;
   padding: 10px;
   margin: 0;
   margin-bottom: 5px;
@@ -245,6 +247,8 @@ ul, li {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: got;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .message {
@@ -264,6 +268,8 @@ ul, li {
   -ms-grid-row: 1;
   -ms-grid-column: 3;
   grid-area: hp;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .heartIcon {
@@ -276,8 +282,15 @@ ul, li {
 .affinity {
   position: absolute;
   top: 35%;
-  left: 47%;
+  left: 45.5%;
   color: #e4e4df;
+}
+
+.affinity h2 {
+  font-size: 7rem;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+  border: none;
 }
 
 .individualGotCharacter {
@@ -288,6 +301,7 @@ ul, li {
 
 .message {
   text-align: center;
+  border-bottom: 5px solid #d0a360;
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
@@ -299,7 +313,29 @@ ul, li {
   width: 400px;
   height: 400px;
   border-radius: 50%;
-  border: 10px solid #d0a360;
+  border: 15px solid #d0a360;
+}
+
+button {
+  margin-top: 2%;
+  border: none;
+  color: #e4e4df;
+  background-color: #171c20;
+  padding: 20px 15px;
+  font-size: 2rem;
+  border-radius: 25px;
+}
+
+button:hover {
+  color: #171c20;
+  background-color: #d0a360;
+  border: 2px dashed #171c20;
+}
+
+button:focus {
+  color: #171c20;
+  background-color: #e4e4df;
+  border: 2px dashed #171c20;
 }
 
 .heartbeat {

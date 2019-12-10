@@ -18,10 +18,13 @@ h1{
     font-family: $heading-font;
     color: $dark-color;
     margin: 0;
+    letter-spacing: -5px;
+    text-shadow: 3px 3px $accent-color;
 }
 
 h2{
     font-size: 5rem;
+    border-bottom: 5px solid $accent-color;
     margin: 0;
     font-family: $heading-font;
 }
@@ -39,8 +42,7 @@ body{
 
 p{
     font-size: 3rem;
-    background-color: $dark-color;
-    color: $light-color;
+    color: $dark-color;
     padding: 10px;
     margin: 0;
     margin-bottom: 5px;
@@ -67,6 +69,8 @@ ul, li {
 
 .gotCharacters{
     grid-area: got;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .message{
@@ -79,6 +83,8 @@ ul, li {
 
 .hpCharacters{
       grid-area: hp;
+      margin: 0 auto;
+      text-align: center;
 }
 
 .heartIcon{
@@ -91,8 +97,14 @@ ul, li {
 .affinity{
     position: absolute;
     top: 35%;
-    left: 47%;
+    left: 45.5%;
     color: $light-color;
+    h2{
+        font-size: 7rem;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: black;
+        border: none;
+    }
 }
 
 
@@ -106,6 +118,7 @@ ul, li {
 
 .message{
     text-align: center;
+    border-bottom: 5px solid $accent-color;
     grid-area: message;
 }
 
@@ -114,5 +127,25 @@ ul, li {
     width: 400px;
     height: 400px;
     border-radius: 50%;
-    border: 10px solid $accent-color;
+    border: 15px solid $accent-color;
+}
+
+button{
+    margin-top: 2%;
+    border: none;
+    color: $light-color;
+    background-color: $dark-color;
+    padding: 20px 15px;
+    font-size: 2rem;
+    border-radius: 25px;
+    &:hover{
+        color: $dark-color;
+        background-color: $accent-color;
+        border: 2px dashed $dark-color;
+    }
+    &:focus{
+        color: $dark-color;
+        background-color: $light-color;
+        border: 2px dashed $dark-color;
+    }
 }
