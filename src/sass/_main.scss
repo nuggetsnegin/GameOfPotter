@@ -1,85 +1,182 @@
-/* MAIN */
+/*VARIABLES*/
+$dark-color: #171c20;
+$accent-color: #d0a360;
+$light-color: #e4e4df;
+$body-font: "Poppins", sans-serif;
+$heading-font: "Libre Caslon Display", serif;
 
-.hpCharacters,
-.gotCharacters {
-    background-color: $light-color;
-    margin-top: 15%;
-    min-height: 70vh;
+/*FONT*/
+@import url("https://fonts.googleapis.com/css?family=Libre+Caslon+Display|Poppins&display=swap");
+
+
+/*MAIN STYLING*/
+html {
+  font-size: 62.5%;
 }
 
-.gotImage, 
-.hpImage {
-    width: 50%;
-    height: 50%;
+header{
+  min-height: 15vh;
 }
 
+main{
+  min-height: 80vh;
+}
+
+h1 {
+  font-size: 10rem;
+  text-align: center;
+  font-family: $heading-font;
+  color: $accent-color;
+  margin: 0;
+  letter-spacing: -3px;
+  text-shadow: 2px 2px rgb(110, 27, 27);
+}
+
+h2 {
+  font-size: 4rem;
+  border-bottom: 5px solid $accent-color;
+  margin: 0;
+  font-family: $heading-font;
+}
+
+h3 {
+  font-size: 4rem;
+  margin: 0;
+  font-family: $heading-font;
+}
+
+body {
+  font-family: $body-font;
+  background-color: $dark-color;
+}
+
+p {
+  font-size: 2.3rem;
+  color: $dark-color;
+  padding: 10px;
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+.wrapper {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+button {
+  border: none;
+  color: $light-color;
+  background-color: $dark-color;
+  box-shadow: 4px 4px $accent-color;
+  padding: 20px 15px;
+  font-size: 2rem;
+  border-radius: 25px;
+  &:hover {
+    color: $dark-color;
+    background-color: $accent-color;
+    box-shadow: 2px 2px $dark-color;
+  }
+  &:focus {
+    transform: scale(1.1);
+  }
+}
+
+/*MAIN SECTION - GRID SETUP*/
 .gridContainer {
-    background-image: url(../assets/backgroundImage.jpg);
-    background-attachment: fixed;
-    height: 85vh;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(1, 80vh);
-    gap: 5px;
-    grid-template-areas:
-    "got seal hp"
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, min-content);
+  gap: 5px;
+  background-image: url(../assets/backgroundPattern.jpg);
+  background-size: contain;
+  opacity: 0.8;
+  background-attachment: fixed;
+  grid-template-areas:
+    "introduction introduction introduction"
+    "got heart hp"
+    "message message message";
 }
 
 .gotCharacters {
-    grid: got;
-}
-
-.sealIcon {
-    grid: seal;
-    position: relative;
-    width: 100%;
-    height: auto;
-}
-
-.individualGotCharacter {
-    grid: got;
+  grid-area: got;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .hpCharacters {
-    grid: hp;
+  grid-area: hp;
+  margin: 0 auto;
+  text-align: center;
 }
 
-.iconContainer {
-    position: relative;
-    display: flex;
-    align-self: center;
-    padding: 10%;
-    h4 {
-        position: absolute;
-        top: 50%;
-        left: 35%;
-        font-size: 3rem;
-        text-align: center;
-        margin: 0;
-        color: $light-color;
-    }
+.gotImages,
+.hpImages {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  border: 15px solid $accent-color;
 }
 
+/*HEART SECTION*/
 
-.affinity {
+.affinyWrapper {
+  grid-area: heart;
+}
+
+.heartIcon {
+  width: 80%;
+  height: 80%;
+  margin: 0 auto;
+}
+
+.heartWrapper{
+  position: relative;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  h2{
+    z-index: 2;
     position: absolute;
-    top: 48%;
-    left: 47%;
-    font-size: 4rem;
+    top: 37%;
+    left: 38%;
+    border-bottom: none;
+    font-size: 7rem;
     color: $light-color;
+    text-shadow: 3px 3px $dark-color;
+  }
 }
 
-.randomizeCharacter {
-    font-size: 1.6rem;
-    display: flex;
-    padding: 10px 15px;
-    border-radius: 8px;
-    background-color: $accent-color;
-    color: $dark-color;
-    transition: 0.35s;
-    &:hover,
-    &:focus {
-        background-color: $dark-color;
-        color: $accent-color;
-    }
+.message {
+  grid-area: message;
+  text-align: center;
+  h3{
+    font-size: 3.5rem;
+  }
+}
+
+.introduction {
+  grid-area: introduction;
+  text-align: center;
+  width: 50%;
+  margin: 0 auto;
+  font-size: 2rem;
+  span {
+    font-weight: 900;
+  }
+}
+
+footer {
+  background-color: $dark-color;
+  color: $light-color;
+  text-align: center;
+  min-height: 4vh;
+  font-size: 1.5rem;
+  span {
+    color: $accent-color;
+  }
 }

@@ -1,37 +1,45 @@
 import React, { Component } from 'react';
 import "./styles/App.css";
-import GetGotCharacters from './GetGotCharacters';
-import GetHpCharacters from './GetHpCharacters';
-import seal from './assets/seal.png';
-import Outing from './Outing.js';
-import StatsMatch from './StatsMatch.js';
+import GetGotCharacters from "./GetGotCharacters";
+import GetHpCharacters from "./GetHpCharacters";
+import Outing from "./Outing.js";
+import StatsMatch from "./StatsMatch.js";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       randomGotCharacter: {},
-      randomHpCharacter: {}
+      randomHpCharacter: {},
     };
   }
 
   render() {
     return (
-      <div className='wrapper'>
-        <h1 className="title">Game of Potter</h1>
-        <div className='gridContainer'>
-          <GetGotCharacters setAppState={value => this.setState(value)} />
-          <div className="iconContainer">
-            <img className='sealIcon' src={seal} alt=""/>
-            <h4>match</h4>
-          </div>
-          <StatsMatch 
-            got={this.state.randomGotCharacter}
-            hp={this.state.randomHpCharacter}
-          />
-          <GetHpCharacters setAppState={value => this.setState(value)} />
+      <div className='app'>
+        <div className='wrapper'>
+          <header><h1>Game of Potter</h1></header>
+          <main className='gridContainer'>
+            <div className='introduction'>
+              <p>
+                Hi there! Have you ever wanted to know which{" "}
+                <span>Game of Thrones</span> and <span>Harry Potter </span>
+                characters could be BFFS? No? Well.. too bad!
+              </p>
+            </div>
+            <GetGotCharacters setAppState={value => this.setState(value)} />
+            <StatsMatch
+              got={this.state.randomGotCharacter}
+              hp={this.state.randomHpCharacter}
+            />
+            <GetHpCharacters setAppState={value => this.setState(value)} />
+            {/* <Outing /> */}
+          </main>
         </div>
-          <Outing />
+        <footer>
+          Made with magic & blood by <span>Negin</span>, <span>Sarah</span>,{" "}
+          <span>Nuno</span> & <span>Keil</span> 2019
+        </footer>
       </div>
     );
   }
