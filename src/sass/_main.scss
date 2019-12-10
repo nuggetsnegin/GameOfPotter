@@ -15,6 +15,7 @@
 
 .gridContainer {
     background-image: url(../assets/backgroundImage.jpg);
+    background-attachment: fixed;
     height: 85vh;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
