@@ -35,7 +35,11 @@ const StatsMatch = props => {
     return null
   }
   const value = combineStats(props.hp, props.got)
+  
+  props.sendValue(value);
   return <div className='affinity'>{value}</div>
 }
+
+
 
 export default StatsMatch
