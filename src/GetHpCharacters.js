@@ -67,7 +67,7 @@ class GetHpCharacters extends Component {
 
     return (
       <div className='hpCharacters'>
-        <div className='individualGotCharacter'>
+        <div className='individualHpCharacter'>
           <h2>{randomHPCharacter.name}</h2>
           <p>
             {randomHPCharacter.house}

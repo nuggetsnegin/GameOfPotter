@@ -460,6 +460,47 @@ footer span {
   font-size: 1.5rem;
 }
 
+@media (max-width: 1220px) {
+  .hpImages,
+  .gotImages {
+    width: 300px;
+    height: 300px;
+  }
+  button {
+    padding: 10px;
+  }
+  .individualGotCharacter,
+  .individualHpCharacter {
+    min-height: 350px;
+    -ms-flex-preferred-size: bottom;
+        flex-basis: bottom;
+  }
+}
+
+@media (max-width: 1050px) {
+  .heartIcon {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 915px) {
+  .introduction {
+    width: 80%;
+  }
+  .hpImages,
+  .gotImages {
+    width: 250px;
+    height: 250px;
+  }
+  button {
+    font-size: 1.5rem;
+  }
+  .message h3 {
+    font-size: 3rem;
+  }
+}
+
 .heartbeat {
   -webkit-animation: heartbeat 1.5s ease-in-out infinite both;
   animation: heartbeat 1.5s ease-in-out infinite both;
