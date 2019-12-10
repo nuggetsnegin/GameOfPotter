@@ -15,8 +15,9 @@ html {
 }
 
 header{
-  min-height: 15vh;
+  min-height: 10vh;
   background-color: $dark-color;
+  border-bottom: 3px solid $accent-color;
 }
 
 main{
@@ -24,7 +25,7 @@ main{
 }
 
 h1 {
-  font-size: 10rem;
+  font-size: 7rem;
   text-align: center;
   font-family: $heading-font;
   color: $accent-color;
@@ -168,7 +169,7 @@ button {
 .introduction {
   grid-area: introduction;
   text-align: center;
-  width: 50%;
+  width: 70%;
   margin: 0 auto;
   font-size: 2rem;
   span {

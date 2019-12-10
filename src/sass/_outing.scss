@@ -2,6 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+  border-top: 3px solid $accent-color;
   .title {
     font-size: 5rem;
     text-align: center;
@@ -9,6 +10,8 @@
     color: $accent-color;
     border: none;
   }
+
+  
   .outingSuggestions {
     ul {
       display: flex;
