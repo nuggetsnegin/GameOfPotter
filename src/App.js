@@ -4,6 +4,7 @@ import GetGotCharacters from "./GetGotCharacters";
 import GetHpCharacters from "./GetHpCharacters";
 import Outing from "./Outing.js";
 import StatsMatch from "./StatsMatch.js";
+import Footer from './Footer.js';
 
 // let filteredRestaurant = {}
 
@@ -114,21 +115,15 @@ class App extends Component {
               sendValue={this.handleValue}
             />
             <GetHpCharacters setAppState={value => this.setState(value)} />
-            <Outing
-              getReview={this.handleGetReview}
-              passReview={this.state.filteredRestaurant}
-              
-              // passMatchValue={this.state.matchValue}
-              // sendValue={this.handleValue}
-              // filteredRestaurants={filteredRestaurant}
-            />
           </main>
         </div>
-        <footer>
-          Made with magic & blood by <span>Negin</span>, <span>Sarah</span>,{" "}
-          <span>Nuno</span> & <span>Keil</span> 2019
-        </footer>
+        <Outing
+              getReview={this.handleGetReview}
+              passReview={this.state.filteredRestaurant}
+            />
+        <Footer />
       </div>
+
     );
   }
 }
