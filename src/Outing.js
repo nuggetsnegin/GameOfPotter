@@ -51,29 +51,30 @@ class Outing extends Component {
 
 
   render() {
-
     return (
       <div className='outing'>
-        <h2 className='title'>Outing Suggestions</h2>
-        <div className='outingSuggestions'>
-          <ul>
-            {this.props.passReview.map(suggestion => {
-              return (
-                <li>
-                  <img
-                    className='restaurantImg'
-                    src={suggestion.image}
-                    alt={suggestion.name}
-                  />
-                  <div className='restaurantInfo'>
-                    <h3>{suggestion.name}</h3>
-                    <h5>Review: {suggestion.review} ⭐️</h5>
-                    <h4>Cuisine: {suggestion.cuisine}</h4>
-                  </div>
-                </li>
-              );
-            })}
-          </ul>
+        <div class='wrapper'>
+          <h2 className='title'>Date Night Suggestions</h2>
+          <div className='outingSuggestions'>
+            <ul>
+              {this.props.passReview.map(suggestion => {
+                return (
+                  <li>
+                    <img
+                      className='restaurantImg'
+                      src={suggestion.image}
+                      alt=''
+                    />
+                    <div className='restaurantInfo'>
+                      <h3>{suggestion.name}</h3>
+                      <h5>Review: {suggestion.review} ⭐️</h5>
+                      <h4>Cuisine: {suggestion.cuisine}</h4>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
         </div>
       </div>
     );

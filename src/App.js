@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
-import './styles/App.css';
-import GetGotCharacters from './GetGotCharacters';
-import GetHpCharacters from './GetHpCharacters';
-import Outing from './Outing.js';
-import StatsMatch from './StatsMatch.js';
+import "./styles/App.css";
+import GetGotCharacters from "./GetGotCharacters";
+import GetHpCharacters from "./GetHpCharacters";
+import Outing from "./Outing.js";
+import StatsMatch from "./StatsMatch.js";
+import Footer from './Footer.js';
+
+// let filteredRestaurant = {}
 
 class App extends Component {
   constructor() {
@@ -91,18 +94,15 @@ class App extends Component {
               sendValue={this.handleValue}
             />
             <GetHpCharacters setAppState={value => this.setState(value)} />
-            <Outing
+          </main>
+        </div>
+        <Outing
               getReview={this.handleGetReview}
               passReview={this.state.filteredRestaurant}
             />
-          </main>
-        </div>
-
-        <footer>
-          Made with magic & blood by <span>Negin</span>, <span>Sarah</span>,{' '}
-          <span>Nuno</span> & <span>Keil</span> 2019
-        </footer>
+        <Footer />
       </div>
+
     );
   }
 }
