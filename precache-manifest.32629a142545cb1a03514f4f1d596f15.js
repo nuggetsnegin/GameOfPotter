@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b751d7835acd59fa8564dfddd074ad09",
+    "revision": "6ac53ddecea9b1844f8c8c00493fe711",
     "url": "/GameOfPotter/index.html"
   },
   {
-    "revision": "ab1eafd905fcc75ad723",
-    "url": "/GameOfPotter/static/css/main.6ea6261f.chunk.css"
+    "revision": "9473796545dffdee6a4c",
+    "url": "/GameOfPotter/static/css/main.9b0b6483.chunk.css"
   },
   {
     "revision": "0b7d856c27423954d672",
     "url": "/GameOfPotter/static/js/2.70ceb61f.chunk.js"
   },
   {
-    "revision": "ab1eafd905fcc75ad723",
-    "url": "/GameOfPotter/static/js/main.053d1959.chunk.js"
+    "revision": "9473796545dffdee6a4c",
+    "url": "/GameOfPotter/static/js/main.e872559c.chunk.js"
   },
   {
     "revision": "dd8e1a54d3b079567c10",
