@@ -696,10 +696,6 @@ footer span {
   .heartWrapper h2 {
     left: 45%;
   }
-  .restaurantImg {
-    -o-object-fit: contain;
-       object-fit: contain;
-  }
   .outing .title {
     font-size: 4rem;
   }
