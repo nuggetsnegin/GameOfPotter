@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import placeholderImage from './assets/cameraPlaceholder.jpg'
+import placeholderImage from './assets/placeholder.png'
 
 class GetGotCharacters extends Component {
   constructor () {
@@ -58,7 +58,6 @@ class GetGotCharacters extends Component {
             const characterObject = {
               name: character.name,
               house: character.house,
-              // alive: character.alive,
               age: character.birth,
               image: character.image
             }

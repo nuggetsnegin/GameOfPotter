@@ -15,6 +15,12 @@
 .outing{
   grid-area: outing;
   background-color: $dark-color;
+  overflow: hidden;
+}
+
+.friendshipImage{
+  width: 100px;
+  height: 100px;
 }
 
 .app{
@@ -37,8 +43,8 @@
 
 .gotImages,
 .hpImages {
-  width: 350px;
-  height: 350px;
+  width: 290px;
+  height: 290px;
   border-radius: 50%;
   border: 15px solid $accent-color;
 }
@@ -73,7 +79,7 @@
   grid-area: message;
   text-align: center;
   h3{
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
 }
 
@@ -83,6 +89,10 @@
   width: 70%;
   margin: 0 auto;
   font-size: 2rem;
+  p{
+    padding: 0;
+    font-size: 1.9rem;
+  }
   span {
     font-weight: 900;
   }

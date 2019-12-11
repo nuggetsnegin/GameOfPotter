@@ -413,6 +413,12 @@ button:focus {
   -ms-grid-column-span: 3;
   grid-area: outing;
   background-color: #171c20;
+  overflow: hidden;
+}
+
+.friendshipImage {
+  width: 100px;
+  height: 100px;
 }
 
 .app {
@@ -439,8 +445,8 @@ button:focus {
 
 .gotImages,
 .hpImages {
-  width: 350px;
-  height: 350px;
+  width: 290px;
+  height: 290px;
   border-radius: 50%;
   border: 15px solid #d0a360;
 }
@@ -486,7 +492,7 @@ button:focus {
 }
 
 .message h3 {
-  font-size: 3.5rem;
+  font-size: 3rem;
 }
 
 .introduction {
@@ -498,6 +504,11 @@ button:focus {
   width: 70%;
   margin: 0 auto;
   font-size: 2rem;
+}
+
+.introduction p {
+  padding: 0;
+  font-size: 1.9rem;
 }
 
 .introduction span {
@@ -684,6 +695,10 @@ footer span {
   }
   .heartWrapper h2 {
     left: 45%;
+  }
+  .restaurantImg {
+    -o-object-fit: contain;
+       object-fit: contain;
   }
   .outing .title {
     font-size: 4rem;

@@ -1,12 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import "./styles/App.css";
 import GetGotCharacters from "./GetGotCharacters";
 import GetHpCharacters from "./GetHpCharacters";
 import Outing from "./Outing.js";
 import StatsMatch from "./StatsMatch.js";
-import Footer from './Footer.js';
-
-// let filteredRestaurant = {}
+import Footer from "./Footer.js";
+import friendshipImage from "./assets/friendship.png";
 
 class App extends Component {
   constructor() {
@@ -15,117 +14,92 @@ class App extends Component {
       randomGotCharacter: {},
       randomHpCharacter: {},
       suggestions: [],
-      matchValue: '',
-      filteredRestaurant: []
+      matchValue: "",
+      filteredRestaurant: [],
     };
   }
 
-  handleGetReview = (suggestionsArray) => {
-    this.setState({
-      suggestions: suggestionsArray
-    }, () => {
-      if (this.state.matchValue) {
-        this.passValue();
+  handleGetReview = suggestionsArray => {
+    this.setState(
+      {
+        suggestions: suggestionsArray,
+      },
+      () => {
+        if (this.state.matchValue) {
+          this.passValue();
+        }
       }
-    })
-  }
+    );
+  };
 
-  handleValue = (value) => {
-    this.setState({
-      matchValue: value
-    }, () => {
-      if (this.state.suggestions.length > 0) {
-        this.passValue();
+  handleValue = value => {
+    this.setState(
+      {
+        matchValue: value,
+      },
+      () => {
+        if (this.state.suggestions.length > 0) {
+          this.passValue();
+        }
       }
-    })
-  }
+    );
+  };
 
   passValue = () => {
     const cloneArray = [...this.state.suggestions];
-    
-    if (this.state.matchValue <= 40) {
-      const newArray = cloneArray.filter((restaurant) => {
-        return restaurant.review <= 4.2;
-      })
+    let newArray = [];
 
-       // if the incoming array has more than 3 items, get three random numbers and use those numbers to grab 3 random restaurants, and then set that array to state
-      if (newArray.length > 3) {
-        let smallArray = [];
-        // create array of 3 random Numbers and use to pick 3 random restaurants from the array newArray
-        for (let i = 0; i < 3; i++) {
-          // generate a random number between 0 and the newArray length
-          const randomNumber = Math.floor(Math.random() * newArray.length)
-          smallArray.push(newArray[randomNumber])
-        }
-        this.setState({
-          filteredRestaurant: smallArray
-        })
-        // else if the incoming array already has only 3 items, just put that array of 3 in state
-      } else {
-        this.setState({
-          filteredRestaurant: newArray
-        })
-      }  
-    } 
-    else if (this.state.matchValue > 40 && this.state.matchValue <= 60) {
-      const newArray = cloneArray.filter((restaurant) => {
-        return restaurant.review <= 4.5 && restaurant.review > 4.2;
-      })
-
-      if (newArray.length > 3) {
-        let smallArray = [];
-        // create array of 3 random Numbers
-        for (let i = 0; i < 3; i++) {
-          // generate a random number between 0 and the newArray length
-          const randomNumber = Math.floor(Math.random() * newArray.length)
-          smallArray.push(newArray[randomNumber])
-        }
-        this.setState({
-          filteredRestaurant: smallArray
-        })
-      } else {
-        this.setState({
-          filteredRestaurant: newArray
-        })
-      }
-    } else if (this.state.matchValue > 60) {
-      const newArray = cloneArray.filter((restaurant) => {
+    if (this.state.matchValue <= 50) {
+      newArray = cloneArray.filter(restaurant => {
+        return restaurant.review <= 2;
+      });
+    } else if (this.state.matchValue > 50 && this.state.matchValue <= 70) {
+      newArray = cloneArray.filter(restaurant => {
+        return restaurant.review >= 2 && restaurant.review < 4.4;
+      });
+    } else if (this.state.matchValue > 70) {
+      newArray = cloneArray.filter(restaurant => {
         return restaurant.review > 4.5;
-      })
+      });
+    }
 
-      if (newArray.length > 3) {
-        let smallArray = [];
-        // create array of 3 random Numbers
-        for (let i = 0; i < 3; i++) {
-          // generate a random number between 0 and the newArray length
-          const randomNumber = Math.floor(Math.random() * newArray.length)
-          smallArray.push(newArray[randomNumber])
-        }
-        this.setState({
-          filteredRestaurant: smallArray
-        })
-      } else {
-        this.setState({
-          filteredRestaurant: newArray
-        })
+    if (newArray.length > 3) {
+      let smallArray = [];
+
+      // create array of 3 random Numbers and use to pick 3 random restaurants from the array newArray
+      for (let i = 0; i < 3; i++) {
+        // generate a random number between 0 and the newArray length
+        const randomNumber = Math.floor(Math.random() * newArray.length);
+        smallArray.push(newArray[randomNumber]);
+        newArray.splice(randomNumber); /*preventing duplicates from showing*/
       }
-    } 
-  }
-
-
+      this.setState({
+        filteredRestaurant: smallArray,
+      });
+    }
+    else {
+      this.setState({
+        filteredRestaurant: newArray,
+      });
+    }
+  };
   render() {
-    
     return (
       <div className='app'>
         <header>
           <h1>Game of Potter</h1>
         </header>
-          
+
         <div className='wrapper'>
           <main className='gridContainer'>
             <div className='introduction'>
+              <img
+                src={friendshipImage}
+                alt='Illustration of Harry Potter and Jon Snow holding hands'
+                className='friendshipImage'
+              ></img>
               <p>
-                Hi there! Have you ever wanted to know which{' '}
+                Hi there! Ever wondered which {""}
                 <span>Game of Thrones</span> and <span>Harry Potter </span>
                 characters could be BFFS? No? Well.. too bad!
               </p>
@@ -140,12 +114,11 @@ class App extends Component {
           </main>
         </div>
         <Outing
-              getReview={this.handleGetReview}
-              passReview={this.state.filteredRestaurant}
-            />
+          getReview={this.handleGetReview}
+          passReview={this.state.filteredRestaurant}
+        />
         <Footer />
       </div>
-
     );
   }
 }

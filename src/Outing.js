@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-let suggestions = [];
-
 class Outing extends Component {
   constructor() {
     super();
@@ -20,46 +18,61 @@ class Outing extends Component {
     };
   }
 
-  componentDidMount() {
-    axios({
-      url:
-        'https://developers.zomato.com/api/v2.1/search?entity_id=89&entity_type=city',
-      method: 'GET',
-      dataResponse: 'json',
-      headers: {
-        'user-key': 'a43d2ac63efba3212ecc9c702a40317c',
-      },
-    })
-    .then(response => {
-      const restaurants = response.data.restaurants;
-
-      let arrayOfRestaurants = restaurants.map(suggestion => {
-        const restaurantsObject = {
-          name: suggestion.restaurant.name,
-          image: suggestion.restaurant.thumb,
-          cuisine: suggestion.restaurant.cuisines,
-          review: suggestion.restaurant.user_rating.aggregate_rating,
-        };
-        return restaurantsObject;
-      });
-      suggestions = arrayOfRestaurants;
-    })
-    .then(() => {
-      this.props.getReview(suggestions);
-    });
+  shortenRestaurantName = (restaurantName) =>{
+    if(restaurantName.length >= 12){
+      return restaurantName.slice(0, 12)+"..."; //shorter word and add ...
+    }
+    return restaurantName;
   }
 
+  componentDidMount() {
+    Promise.all([
+      axios.get('https://developers.zomato.com/api/v2.1/search?entity_id=89&entity_type=city',{
+        method: 'GET',
+        dataResponse: 'json',
+        headers: {
+          'user-key': 'a43d2ac63efba3212ecc9c702a40317c',
+        },
+      }),
+      axios.get('https://developers.zomato.com/api/v2.1/search?entity_id=89&entity_type=city&sort=rating&order=asc',{
+        method: 'GET',
+        dataResponse: 'json',
+        headers: {
+          'user-key': 'a43d2ac63efba3212ecc9c702a40317c',
+        },
+      })
+      
+      ]).then(data => {
+      let arrayOfRestaurants = [];
+        data.forEach(restaurant => {
+          restaurant.data.restaurants.forEach(suggestion =>{
+            if(suggestion){
+              const restaurantsObject = {
+                name: this.shortenRestaurantName(suggestion.restaurant.name),
+                image: suggestion.restaurant.thumb, /*if no image available*/
+                cuisine: suggestion.restaurant.cuisines,
+                review: suggestion.restaurant.user_rating.aggregate_rating,
+              }
+              arrayOfRestaurants.push(restaurantsObject);
+            }
+
+          });
+        })
+        this.props.getReview(arrayOfRestaurants);
+    });
+  }
 
   render() {
     return (
       <div className='outing'>
-        <div class='wrapper'>
+        <div className='wrapper'>
           <h2 className='title'>Date Night Suggestions</h2>
           <div className='outingSuggestions'>
             <ul>
-              {this.props.passReview.map(suggestion => {
+            {/*using filter to avoid undefined suggestion crash*/}
+              {this.props.passReview.filter(suggestion => suggestion).map((suggestion, i) => {
                 return (
-                  <li>
+                  <li key={suggestion.name + i}>
                     <img
                       className='restaurantImg'
                       src={suggestion.image}
