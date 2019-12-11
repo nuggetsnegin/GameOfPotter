@@ -21,9 +21,6 @@ class Outing extends Component {
   }
 
   componentDidMount() {
-    /*high rating restaurants*/
-    const goodRestaurants = [];
-    const badRestaurants = [];
 
     Promise.all([
       axios.get('https://developers.zomato.com/api/v2.1/search?entity_id=89&entity_type=city',{
@@ -49,7 +46,7 @@ class Outing extends Component {
 
               const restaurantsObject = {
                 name: suggestion.restaurant.name,
-                image: suggestion.restaurant.thumb?suggestion.restaurant.thumb:null, /*if no image available*/
+                image: suggestion.restaurant.thumb, /*if no image available*/
                 cuisine: suggestion.restaurant.cuisines,
                 review: suggestion.restaurant.user_rating.aggregate_rating,
               }
@@ -59,12 +56,8 @@ class Outing extends Component {
           });
         })
         this.props.getReview(arrayOfRestaurants);
-        console.log(arrayOfRestaurants);
     });
   }
-
-  
-
 
   render() {
     return (
@@ -73,9 +66,11 @@ class Outing extends Component {
           <h2 className='title'>Date Night Suggestions</h2>
           <div className='outingSuggestions'>
             <ul>
+            {console.log(this.props.passReview)}
               {this.props.passReview.map(suggestion => {
+                console.log(suggestion);
                 return (
-                  <li>
+                  <li key={suggestion.name}>
                     <img
                       className='restaurantImg'
                       src={suggestion.image}
