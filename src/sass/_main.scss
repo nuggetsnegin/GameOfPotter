@@ -1,93 +1,4 @@
-/*VARIABLES*/
-$dark-color: #171c20;
-$accent-color: #d0a360;
-$light-color: #e4e4df;
-$body-font: "Poppins", sans-serif;
-$heading-font: "Libre Caslon Display", serif;
-
-/*FONT*/
-@import url("https://fonts.googleapis.com/css?family=Libre+Caslon+Display|Poppins&display=swap");
-
-
-/*MAIN STYLING*/
-html {
-  font-size: 62.5%;
-}
-
-header{
-  min-height: 10vh;
-  background-color: $dark-color;
-  border-bottom: 3px solid $accent-color;
-}
-
-main{
-  min-height: 80vh;
-}
-
-h1 {
-  font-size: 7rem;
-  text-align: center;
-  font-family: $heading-font;
-  color: $accent-color;
-  margin: 0;
-  letter-spacing: -3px;
-}
-
-h2 {
-  font-size: 3.2rem;
-  border-bottom: 5px solid $accent-color;
-  margin: 0;
-  font-family: $heading-font;
-}
-
-h3 {
-  font-size: 4rem;
-  margin: 0;
-  font-family: $heading-font;
-}
-
-body {
-  font-family: $body-font;
-  background-color: $dark-color;
-}
-
-p {
-  font-size: 2.3rem;
-  color: $dark-color;
-  padding: 10px;
-  margin: 0;
-  margin-bottom: 5px;
-}
-
-.wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-ul,
-li {
-  list-style: none;
-}
-
-button {
-  border: none;
-  color: $light-color;
-  background-color: $dark-color;
-  box-shadow: 4px 4px $accent-color;
-  padding: 20px 15px;
-  font-size: 2rem;
-  border-radius: 25px;
-  transition: 0.35s;
-  &:hover {
-    color: $dark-color;
-    background-color: $accent-color;
-    box-shadow: 2px 2px $dark-color;
-  }
-  &:focus {
-    transform: scale(1.1);
-  }
-}
-
+  
 /*MAIN SECTION - GRID SETUP*/
 .gridContainer {
   display: grid;
@@ -133,7 +44,6 @@ button {
 }
 
 /*HEART SECTION*/
-
 .affinyWrapper {
   grid-area: heart;
 }
@@ -175,17 +85,5 @@ button {
   font-size: 2rem;
   span {
     font-weight: 900;
-  }
-}
-
-footer {
-  background-color: $dark-color;
-  border-top: 2px solid $accent-color;
-  color: $light-color;
-  text-align: center;
-  min-height: 4vh;
-  font-size: 1.5rem;
-  span {
-    color: $accent-color;
   }
 }
