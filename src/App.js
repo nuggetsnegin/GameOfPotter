@@ -5,6 +5,7 @@ import GetHpCharacters from "./GetHpCharacters";
 import Outing from "./Outing.js";
 import StatsMatch from "./StatsMatch.js";
 import Footer from "./Footer.js";
+import friendshipImage from './assets/friendship.png'
 
 class App extends Component {
   constructor() {
@@ -128,8 +129,9 @@ class App extends Component {
         <div className='wrapper'>
           <main className='gridContainer'>
             <div className='introduction'>
+            <img src={friendshipImage} alt="Illustration of Harry Potter and Jon Snow holding hands" className="friendshipImage"></img>
               <p>
-                Hi there! Have you ever wanted to know which{" "}
+                Hi there! Ever wondered which {""}
                 <span>Game of Thrones</span> and <span>Harry Potter </span>
                 characters could be BFFS? No? Well.. too bad!
               </p>
