@@ -45,7 +45,6 @@ class App extends Component {
   };
 
   passValue = () => {
-    console.log('hello')
     const cloneArray = [...this.state.suggestions];
 
     if (this.state.matchValue <= 50) {
@@ -83,7 +82,7 @@ class App extends Component {
         for (let i = 0; i < 3; i++) {
           // generate a random number between 0 and the newArray length
           const randomNumber = Math.floor(Math.random() * newArray.length);
-          smallArray.push(newArray[randomNumber]); 
+          smallArray.push(newArray[randomNumber]);
           newArray.splice(randomNumber); /*preventing duplicates from showing*/
         }
         this.setState({
