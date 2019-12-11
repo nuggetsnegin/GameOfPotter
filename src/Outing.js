@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { strict } from 'assert';
 
 class Outing extends Component {
   constructor() {

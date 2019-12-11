@@ -57,13 +57,13 @@ class StatsMatch extends Component {
   };
 
   pointMessages = totalPoints => {
-    if (totalPoints >= 90) return 'Wow! Best Friends Forever!';
-    else if (totalPoints >= 80) return 'Besties';
+    if (totalPoints >= 90) return '✨Wow! Best Friends Forever!!✨';
+    else if (totalPoints >= 80) return 'OMG Besties!';
     else if (totalPoints >= 70) return 'Matching outfits time!';
     else if (totalPoints >= 60) return 'I may not know your phone number but I remember your name!';
-    else if (totalPoints >= 50) return 'Fine Friends';
+    else if (totalPoints >= 50) return 'Fine Friends.';
     else if (totalPoints >= 40) return 'Maybe if you talked less, I would like you more..';
-    else if (totalPoints >= 30) return 'Totally Friendzoned';
+    else if (totalPoints >= 30) return 'Totally Friendzoned..';
     else if (totalPoints >= 20) return 'Do I know you?';
     else if (totalPoints >= 10) return 'Wow.. just no.';
     else return 'Worst match EVER!';
