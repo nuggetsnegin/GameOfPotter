@@ -47,7 +47,7 @@ class Outing extends Component {
           restaurant.data.restaurants.forEach(suggestion =>{
             const restaurantsObject = {
               name: suggestion.restaurant.name,
-              image: suggestion.restaurant.thumb,
+              image: suggestion.restaurant.thumb?suggestion.restaurant.thumb:null, /*if no image available*/
               cuisine: suggestion.restaurant.cuisines,
               review: suggestion.restaurant.user_rating.aggregate_rating,
             }
@@ -55,6 +55,7 @@ class Outing extends Component {
           });
         })
         this.props.getReview(arrayOfRestaurants);
+        console.log(arrayOfRestaurants);
     });
   }
 
@@ -73,7 +74,7 @@ class Outing extends Component {
                   <li>
                     <img
                       className='restaurantImg'
-                      src={suggestion.image}
+                      src={suggestion.image?suggestion.image:null}
                       alt=''
                     />
                     <div className='restaurantInfo'>

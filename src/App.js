@@ -73,10 +73,10 @@ class App extends Component {
       }
     } else if (this.state.matchValue > 50 && this.state.matchValue <= 70) {
       const newArray = cloneArray.filter(restaurant => {
-        return restaurant.review <= 3 && restaurant.review > 4;
+        return restaurant.review <= 2 && restaurant.review > 4.4;
       });
 
-      if (newArray.length > 3) {
+     
         let smallArray = [];
         // create array of 3 random Numbers
         for (let i = 0; i < 3; i++) {
@@ -87,14 +87,10 @@ class App extends Component {
         this.setState({
           filteredRestaurant: smallArray,
         });
-      } else {
-        this.setState({
-          filteredRestaurant: newArray,
-        });
-      }
+
     } else if (this.state.matchValue > 70) {
       const newArray = cloneArray.filter(restaurant => {
-        return restaurant.review > 4.1;
+        return restaurant.review > 4.5;
       });
 
       if (newArray.length > 3) {
