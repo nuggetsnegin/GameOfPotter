@@ -1,23 +1,24 @@
 {
   "files": {
-    "main.css": "/GameOfPotter/static/css/main.49f7fd11.chunk.css",
-    "main.js": "/GameOfPotter/static/js/main.4f6bda5d.chunk.js",
-    "main.js.map": "/GameOfPotter/static/js/main.4f6bda5d.chunk.js.map",
+    "main.css": "/GameOfPotter/static/css/main.31fb778b.chunk.css",
+    "main.js": "/GameOfPotter/static/js/main.c9d414dc.chunk.js",
+    "main.js.map": "/GameOfPotter/static/js/main.c9d414dc.chunk.js.map",
     "runtime-main.js": "/GameOfPotter/static/js/runtime-main.ba95b4d8.js",
     "runtime-main.js.map": "/GameOfPotter/static/js/runtime-main.ba95b4d8.js.map",
-    "static/js/2.a630dbef.chunk.js": "/GameOfPotter/static/js/2.a630dbef.chunk.js",
-    "static/js/2.a630dbef.chunk.js.map": "/GameOfPotter/static/js/2.a630dbef.chunk.js.map",
+    "static/js/2.709cbc54.chunk.js": "/GameOfPotter/static/js/2.709cbc54.chunk.js",
+    "static/js/2.709cbc54.chunk.js.map": "/GameOfPotter/static/js/2.709cbc54.chunk.js.map",
     "index.html": "/GameOfPotter/index.html",
-    "precache-manifest.23b54d2ee132f696508bf10eed49f325.js": "/GameOfPotter/precache-manifest.23b54d2ee132f696508bf10eed49f325.js",
+    "precache-manifest.661d7d5379ec52f6a8b52c209ed95b41.js": "/GameOfPotter/precache-manifest.661d7d5379ec52f6a8b52c209ed95b41.js",
     "service-worker.js": "/GameOfPotter/service-worker.js",
-    "static/css/main.49f7fd11.chunk.css.map": "/GameOfPotter/static/css/main.49f7fd11.chunk.css.map",
+    "static/css/main.31fb778b.chunk.css.map": "/GameOfPotter/static/css/main.31fb778b.chunk.css.map",
     "static/media/App.css": "/GameOfPotter/static/media/backgroundPattern.f9500e7a.jpg",
-    "static/media/cameraPlaceholder.jpg": "/GameOfPotter/static/media/cameraPlaceholder.b48d69c3.jpg"
+    "static/media/friendship.png": "/GameOfPotter/static/media/friendship.ee323d0b.png",
+    "static/media/placeholder.png": "/GameOfPotter/static/media/placeholder.e644bd87.png"
   },
   "entrypoints": [
     "static/js/runtime-main.ba95b4d8.js",
-    "static/js/2.a630dbef.chunk.js",
-    "static/css/main.49f7fd11.chunk.css",
-    "static/js/main.4f6bda5d.chunk.js"
+    "static/js/2.709cbc54.chunk.js",
+    "static/css/main.31fb778b.chunk.css",
+    "static/js/main.c9d414dc.chunk.js"
   ]
 }
