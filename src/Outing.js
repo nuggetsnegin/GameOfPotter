@@ -70,9 +70,9 @@ class Outing extends Component {
           <div className='outingSuggestions'>
             <ul>
             {/*using filter to avoid undefined suggestion crash*/}
-              {this.props.passReview.filter(suggestion => suggestion).map(suggestion => {
+              {this.props.passReview.filter(suggestion => suggestion).map((suggestion, i) => {
                 return (
-                  <li key={suggestion.name}>
+                  <li key={suggestion.name + i}>
                     <img
                       className='restaurantImg'
                       src={suggestion.image}
