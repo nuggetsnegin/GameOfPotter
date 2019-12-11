@@ -529,6 +529,8 @@ button:focus {
 }
 
 .outing .outingSuggestions ul .restaurantImg {
+  width: 350px;
+  height: 350px;
   border-radius: 50%;
   border: 5px solid #d0a360;
 }
