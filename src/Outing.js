@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { strict } from 'assert';
 
 class Outing extends Component {
   constructor() {
@@ -18,8 +19,14 @@ class Outing extends Component {
     };
   }
 
-  componentDidMount() {
+  shortenRestaurantName = (restaurantName) =>{
+    if(restaurantName.length >= 12){
+      return restaurantName.slice(0, 12)+"..."; //shorter word and add ...
+    }
+    return restaurantName;
+  }
 
+  componentDidMount() {
     Promise.all([
       axios.get('https://developers.zomato.com/api/v2.1/search?entity_id=89&entity_type=city',{
         method: 'GET',
@@ -42,7 +49,7 @@ class Outing extends Component {
           restaurant.data.restaurants.forEach(suggestion =>{
             if(suggestion){
               const restaurantsObject = {
-                name: suggestion.restaurant.name,
+                name: this.shortenRestaurantName(suggestion.restaurant.name),
                 image: suggestion.restaurant.thumb, /*if no image available*/
                 cuisine: suggestion.restaurant.cuisines,
                 review: suggestion.restaurant.user_rating.aggregate_rating,
