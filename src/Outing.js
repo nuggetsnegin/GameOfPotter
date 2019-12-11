@@ -42,8 +42,7 @@ class Outing extends Component {
       let arrayOfRestaurants = [];
         data.forEach(restaurant => {
           restaurant.data.restaurants.forEach(suggestion =>{
-            if(suggestion.restaurant.thumb){
-
+            if(suggestion){
               const restaurantsObject = {
                 name: suggestion.restaurant.name,
                 image: suggestion.restaurant.thumb, /*if no image available*/
@@ -67,7 +66,8 @@ class Outing extends Component {
           <div className='outingSuggestions'>
             <ul>
             {console.log(this.props.passReview)}
-              {this.props.passReview.map(suggestion => {
+            {/*using filter to avoid undefined suggestion crash*/}
+              {this.props.passReview.filter(suggestion => suggestion).map(suggestion => {
                 console.log(suggestion);
                 return (
                   <li key={suggestion.name}>
