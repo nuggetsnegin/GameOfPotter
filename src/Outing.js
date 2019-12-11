@@ -21,33 +21,44 @@ class Outing extends Component {
   }
 
   componentDidMount() {
-    axios({
-      url:
-        'https://developers.zomato.com/api/v2.1/search?entity_id=89&entity_type=city',
-      method: 'GET',
-      dataResponse: 'json',
-      headers: {
-        'user-key': 'a43d2ac63efba3212ecc9c702a40317c',
-      },
-    })
-    .then(response => {
-      const restaurants = response.data.restaurants;
+    /*high rating restaurants*/
+    const goodRestaurants = [];
+    const badRestaurants = [];
 
-      let arrayOfRestaurants = restaurants.map(suggestion => {
-        const restaurantsObject = {
-          name: suggestion.restaurant.name,
-          image: suggestion.restaurant.thumb,
-          cuisine: suggestion.restaurant.cuisines,
-          review: suggestion.restaurant.user_rating.aggregate_rating,
-        };
-        return restaurantsObject;
-      });
-      suggestions = arrayOfRestaurants;
-    })
-    .then(() => {
-      this.props.getReview(suggestions);
+    Promise.all([
+      axios.get('https://developers.zomato.com/api/v2.1/search?entity_id=89&entity_type=city',{
+        method: 'GET',
+        dataResponse: 'json',
+        headers: {
+          'user-key': 'a43d2ac63efba3212ecc9c702a40317c',
+        },
+      }),
+      axios.get('https://developers.zomato.com/api/v2.1/search?entity_id=89&entity_type=city&sort=rating&order=asc',{
+        method: 'GET',
+        dataResponse: 'json',
+        headers: {
+          'user-key': 'a43d2ac63efba3212ecc9c702a40317c',
+        },
+      })
+      
+      ]).then(data => {
+      let arrayOfRestaurants = [];
+        data.forEach(restaurant => {
+          restaurant.data.restaurants.forEach(suggestion =>{
+            const restaurantsObject = {
+              name: suggestion.restaurant.name,
+              image: suggestion.restaurant.thumb,
+              cuisine: suggestion.restaurant.cuisines,
+              review: suggestion.restaurant.user_rating.aggregate_rating,
+            }
+            arrayOfRestaurants.push(restaurantsObject);
+          });
+        })
+        this.props.getReview(arrayOfRestaurants);
     });
   }
+
+  
 
 
   render() {

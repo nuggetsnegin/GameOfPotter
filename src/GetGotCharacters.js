@@ -58,7 +58,6 @@ class GetGotCharacters extends Component {
             const characterObject = {
               name: character.name,
               house: character.house,
-              // alive: character.alive,
               age: character.birth,
               image: character.image
             }
