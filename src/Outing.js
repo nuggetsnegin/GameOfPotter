@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-let suggestions = [];
-
 class Outing extends Component {
   constructor() {
     super();
@@ -65,10 +63,8 @@ class Outing extends Component {
           <h2 className='title'>Date Night Suggestions</h2>
           <div className='outingSuggestions'>
             <ul>
-            {console.log(this.props.passReview)}
             {/*using filter to avoid undefined suggestion crash*/}
               {this.props.passReview.filter(suggestion => suggestion).map(suggestion => {
-                console.log(suggestion);
                 return (
                   <li key={suggestion.name}>
                     <img
