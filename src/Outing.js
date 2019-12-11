@@ -45,13 +45,17 @@ class Outing extends Component {
       let arrayOfRestaurants = [];
         data.forEach(restaurant => {
           restaurant.data.restaurants.forEach(suggestion =>{
-            const restaurantsObject = {
-              name: suggestion.restaurant.name,
-              image: suggestion.restaurant.thumb?suggestion.restaurant.thumb:null, /*if no image available*/
-              cuisine: suggestion.restaurant.cuisines,
-              review: suggestion.restaurant.user_rating.aggregate_rating,
+            if(suggestion.restaurant.thumb){
+
+              const restaurantsObject = {
+                name: suggestion.restaurant.name,
+                image: suggestion.restaurant.thumb?suggestion.restaurant.thumb:null, /*if no image available*/
+                cuisine: suggestion.restaurant.cuisines,
+                review: suggestion.restaurant.user_rating.aggregate_rating,
+              }
+              arrayOfRestaurants.push(restaurantsObject);
             }
-            arrayOfRestaurants.push(restaurantsObject);
+
           });
         })
         this.props.getReview(arrayOfRestaurants);
@@ -74,7 +78,7 @@ class Outing extends Component {
                   <li>
                     <img
                       className='restaurantImg'
-                      src={suggestion.image?suggestion.image:null}
+                      src={suggestion.image}
                       alt=''
                     />
                     <div className='restaurantInfo'>

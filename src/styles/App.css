@@ -413,6 +413,7 @@ button:focus {
   -ms-grid-column-span: 3;
   grid-area: outing;
   background-color: #171c20;
+  overflow: hidden;
 }
 
 .app {

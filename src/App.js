@@ -61,6 +61,7 @@ class App extends Component {
           // generate a random number between 0 and the newArray length
           const randomNumber = Math.floor(Math.random() * newArray.length);
           smallArray.push(newArray[randomNumber]);
+          newArray.splice(randomNumber); /*preventing duplicates from showing*/
         }
         this.setState({
           filteredRestaurant: smallArray,
@@ -73,21 +74,26 @@ class App extends Component {
       }
     } else if (this.state.matchValue > 50 && this.state.matchValue <= 70) {
       const newArray = cloneArray.filter(restaurant => {
-        return restaurant.review <= 2 && restaurant.review > 4.4;
+        return restaurant.review >= 2 && restaurant.review < 4.4;
       });
 
-     
+      if (newArray.length > 3) {
         let smallArray = [];
         // create array of 3 random Numbers
         for (let i = 0; i < 3; i++) {
           // generate a random number between 0 and the newArray length
           const randomNumber = Math.floor(Math.random() * newArray.length);
-          smallArray.push(newArray[randomNumber]);
+          smallArray.push(newArray[randomNumber]); 
+          newArray.splice(randomNumber); /*preventing duplicates from showing*/
         }
         this.setState({
           filteredRestaurant: smallArray,
         });
-
+      } else {
+        this.setState({
+          filteredRestaurant: newArray,
+        });
+      }
     } else if (this.state.matchValue > 70) {
       const newArray = cloneArray.filter(restaurant => {
         return restaurant.review > 4.5;
@@ -100,6 +106,7 @@ class App extends Component {
           // generate a random number between 0 and the newArray length
           const randomNumber = Math.floor(Math.random() * newArray.length);
           smallArray.push(newArray[randomNumber]);
+          newArray.splice(randomNumber);
         }
         this.setState({
           filteredRestaurant: smallArray,
