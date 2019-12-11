@@ -1,7 +1,4 @@
 .outing {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
   border-top: 2px solid $accent-color;
   .title {
     font-size: 5rem;
@@ -18,8 +15,6 @@
       margin: 0;
       padding: 0;
       .restaurantImg {
-        min-width: 200px;
-        min-height: 200px;
         border-radius: 50%;
         border: 5px solid $accent-color;
       }
