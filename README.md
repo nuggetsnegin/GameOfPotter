@@ -4,6 +4,8 @@
 # Game of Potter
 Have you ever wanted to know which Harry Potter and Game of Thrones characters could be BFFS? No? Well too bad! Mob-programming project created in React that utilizes 3 APIs to show a friendship match between Game of Thrones and Harry Potter characters with a Toronto date night selection depending on their match rating.
 
+[Live Link](https://gameofpotter.github.io/GameOfPotter/)
+
 ## Built With
 
 * [React](https://github.com/facebook/create-react-app)
